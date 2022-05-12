@@ -1,0 +1,38 @@
+.COLOURS {
+    color: #E8E8E8; /* main background clr*/
+    color: #F4F4F4; /* secondary background clr*/
+    color: #C4C4C4; /* third background clr*/
+    color: #E3E1E1; /* third background clr*/
+    color: #000000; /* type clr*/
+    color: #FFFFFF; /* type clr*/
+
+}
+
+.Font_Families {
+
+
+    font-family: 'Crimson Pro', serif;
+    font-family: 'Kristi', cursive;
+
+    Kristi 32  H2
+    Kristi 24  H3
+    Crimson Pro 16 P
+    Crimson Pro 20 nav
+
+}
+
+
+body,
+html {
+    box-sizing: border-box;
+    width: 100%;
+    /* max-width: 1400px; */
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-color: #EDF4ED;
+}
+
+/* Show and Hide */
+.dont-show { display: none; }
+.show-flex { display: flex; }
+.show-block { display: block; }
