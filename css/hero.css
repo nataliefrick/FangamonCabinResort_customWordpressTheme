@@ -1,0 +1,21 @@
+/* ----------Hero Section---------- */
+section#hero {
+    margin-top: -84px;
+    z-index: -10;
+}
+
+
+@media (max-width: 880px) {
+    section#hero {
+        margin-top: 90px;
+    }
+}
+
+
+#hero_pic figure {
+    width: 100%;
+}
+
+#heroimg {
+    width: 100%;
+}
