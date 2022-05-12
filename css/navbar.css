@@ -1,0 +1,83 @@
+nav {
+    margin-right: 1%;
+    padding-right: 1%;
+}
+
+nav#nav-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav-desktop a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: #5D8A2F; /* Black w/opacity */
+    border-left: 1px solid #F7B32B;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 5%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    padding: 8px 1em;
+    text-decoration: none;
+    color:#EDF4ED;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    background-color:  #F7B32B;
+    color:#301014;
+}
+
+.icon {
+    color:rgba(0,0,0);
+    border-radius: 50%;
+    padding: 0.4em 0.7em;
+}
+
+.closebtn {
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+/* Position the buttons (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 2em;
+}
