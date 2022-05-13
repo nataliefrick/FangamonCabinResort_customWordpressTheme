@@ -18,13 +18,13 @@ article.card {
     width: 280px;
 }
 
-picture img {
+article.card picture img {
     width: 280px;
     height: 170px;
     object-fit: cover;
 }
 
-div.content {
+article.card div.content {
     padding: 5%;
     text-align: center;
 }
@@ -35,3 +35,106 @@ div.content {
 a.read-more {
     text-transform: uppercase;
 }
+
+
+/* -------------Location section-------------  */
+
+section#map {
+    width: 100%;
+    background-color: #C4C4C4;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+article.content {
+    width: 60%;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.two-columns {
+    columns: 2 auto;
+}
+
+span.gps {
+    font-style: italic;
+    text-align: center;
+}
+
+section#map img {
+    width: 100%;
+    height: auto;
+}
+
+/* -------------Picture Gallery section-------------  */
+section#picture-gallery {
+    width: 60%;
+    max-width: 1024px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+    
+section#picture-gallery picture img {
+    width: 175px;
+    height: 266px;
+    object-fit: cover;
+}
+
+
+/* -------------Hosts section-------------  */
+section#your-hosts {
+    width: 60%;
+    max-width: 1024px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+section#your-hosts div {
+    width: 50%;
+    margin-top: 30px;
+}
+section#your-hosts p {
+    padding-right: 20px;
+}
+
+span.script {
+    font-family: 'Comforter Brush', cursive;
+    font-size: 24px;
+}
+
+section#your-hosts img.pic1 {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+} 
+
+section#your-hosts img.pic2 {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    z-index: 1;
+    margin-left: 350px;
+    margin-top: -30px;
+} 
