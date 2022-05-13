@@ -1,5 +1,6 @@
 nav {
-    margin-top: 2%;
+    background-color: #00000050;
+    padding: 10px 0;
 }
 
 #nav-desktop {
@@ -7,6 +8,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding:0;
 }
 
 nav#frontpg-nav a {
@@ -14,14 +16,19 @@ nav#frontpg-nav a {
     padding: 10px 20px;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18pt;
+    font-weight: 100;
 }
 
-ul, li {
+nav#frontpg-nav a:hover {
+    /* background-color: #50505080; */
+    text-decoration: underline;
+}
+
+#nav-desktop ul, #nav-desktop li {
     list-style-type: none;
     padding: 0;
     display: inline-block;
-    margin: auto; 
 }
 
 /* The Overlay (background) */

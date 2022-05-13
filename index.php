@@ -1,7 +1,6 @@
 <?php 
-include_once("incl/header.php"); 
-
-include_once("incl/hero.php"); ?>
+include("incl/header.php"); 
+include("incl/hero.php"); ?>
 
 <!-- Title & Description Section -->
 <section id="title">
@@ -62,13 +61,14 @@ include_once("incl/hero.php"); ?>
     <article class="content">
         <h2>Where are we located?</h2>
         <p class="two-columns">
-        We are located in beautiful Åre Southern Mountain range (Södra Årefjällen), which lies just southwest of Undersåker and due south of Åre. Nearby we have the ski resorts of Trillevallen, Edsåsdalen and of course Åre, just 30 km away. To the south of us we have Vålådalens elite cross country skiing training center which is open to the public. <br>
-        <span class="gps">   GPS 63°10'60.0"N, 13°07'06.4"E     or   63.2200726, 13.5735197,9.37</span>
+            We are located in beautiful Åre Southern Mountain range (Södra Årefjällen), which lies just southwest of Undersåker and due south of Åre. Nearby we have the ski resorts of Trillevallen, Edsåsdalen and of course Åre, just 30 km away. To the south of us we have Vålådalens elite cross country skiing training center which is open to the public. <br>
+            <span class="gps">   GPS 63°10'60.0"N, 13°07'06.4"E     or   63.2200726, 13.5735197,9.37</span>
         </p>
         <img src="img/map.jpg" alt="map of location">
     </article>
 </section>
 
+<!-- Picture Gallery section -->
 <section id="picture-gallery">
     <h2 class="dont-show">Picture Gallery</h2>
     <picture>
@@ -116,4 +116,10 @@ include_once("incl/hero.php"); ?>
     <img class="pic1" src="img/hosts.jpg" alt="a photo of the hosts">
 </section>
 
-<!-- // include("incl/footer.php");  -->
+<!-- Menu again -->
+<section id="menu-again">
+    <h3>Where to now?</h3>
+    <?php include("incl/navbar1.php"); ?>
+</section>
+
+<?php include("incl/footer.php");  ?>

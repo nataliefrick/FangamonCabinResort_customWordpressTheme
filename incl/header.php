@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/text.css">
     <link rel="stylesheet" href="css/front-pg-main.css">
+    <link rel="stylesheet" href="css/footer.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,5 +43,5 @@
 <h1 class="dont-show">Fångamon Cabin Resort AB - Homepage</h1>
     <header>
 
-        <?php include_once("incl/navbar1.php"); ?>
+        <?php include("incl/navbar1.php"); ?>
         </header>

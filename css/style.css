@@ -1,6 +1,6 @@
 .COLOURS {
-    color: #E8E8E8; /* main background clr*/
     color: #F4F4F4; /* secondary background clr*/
+    color: #E8E8E8; /* main background clr*/
     color: #C4C4C4; /* third background clr*/
     color: #E3E1E1; /* third background clr*/
     color: #000000; /* type clr*/
@@ -63,3 +63,4 @@ html {
     border: 2px solid #F4F4F4;
     background-color: #F4F4F4;
 }
+

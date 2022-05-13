@@ -27,5 +27,8 @@ h1, h2, h3  {
 }
 
 p { font-size: 12pt; line-height: 20px;}
+a:hover {
+    color: #C4C4C4;
+}
 
 span.big { font-size: 16pt; line-height: 22px; text-transform: uppercase;}
