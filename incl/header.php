@@ -6,13 +6,17 @@
     
     <!-- Style Sheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/front-pg-main.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Crimson+Pro:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&family=Kristi&display=swap" rel="stylesheet">
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,9 +41,6 @@
 <body>
 <h1 class="dont-show">Fångamon Cabin Resort AB - Homepage</h1>
     <header>
-        <!-- Insertion of logo -->
-        <div id="logo-header">
-            <picture>
-                <img src="img/logo.png" alt="Fångamon Cabin Resort">
-            </picture>
-        </div>
+
+        <?php include_once("incl/navbar1.php"); ?>
+        </header>

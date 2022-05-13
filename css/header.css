@@ -1,22 +1,41 @@
 header {
     position: absolute;
     width: 100%;
-    background-color: rgba(237, 244, 237, 0.9);
+    /* background-color: rgba(237, 244, 237, 0.9); */   
+}
+
+#title {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#description {
+    width: 100%;
+    background-color: #F4F4F4;
+}
+
+#description div {
+    width: 60%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    z-index: 10;
+    gap: 4%;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-div#logo-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;    
-    margin-left: 1%;
+#description picture {
+    width: 240px;
+    height: 240px;
 }
 
-#logo-header picture {
-    margin: 10px 10px 5px 10px;
+#description picture img { 
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
 }
+
+
 

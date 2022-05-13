@@ -18,7 +18,8 @@
     Kristi 24  H3
     Crimson Pro 16 P
     Crimson Pro 20 nav */
-
+    /* object-fit property is generally applied to image or video. This property defines how an element responds to the width and height of its container. Mainly there are five values of object-fit property such as fill, contain, cover, none, scale-down, initial, and inherit. The default value of this property is "fill".
+    object-fit: fill, contain, cover, none, scale-down, initial, inherit; */
 }
 
 
@@ -29,10 +30,36 @@ html {
     /* max-width: 1400px; */
     margin: 0 auto;
     overflow-x: hidden;
-    background-color: #EDF4ED;
+    background-color: #E8E8E8;
 }
 
 /* Show and Hide */
 .dont-show { display: none; }
 .show-flex { display: flex; }
 .show-block { display: block; }
+
+@media (min-width: 881px) {
+    .hide-onDesktop {display: none; }
+    .hide-onMobile { display: flex; }
+    
+}
+@media (max-width: 880px) {
+    .hide-onDesktop {display: block; }
+    .hide-onMobile { display: none; }
+
+}
+
+@media (min-width: 881px) and (max-width: 1199px) {
+    .hide-onTablet { 
+        display: none; }
+}
+
+
+
+/* General formatting */
+.seperator-line {
+    width: 100%;
+    /* height: 5px; */
+    border: 2px solid #F4F4F4;
+    background-color: #F4F4F4;
+}

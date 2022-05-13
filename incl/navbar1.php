@@ -1,4 +1,4 @@
-<nav>
+<nav id="frontpg-nav">
     <!-- Desktop navbar -->
     
         <ul id="nav-desktop" class="hide-onMobile">

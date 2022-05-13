@@ -5,4 +5,10 @@
                 <img id="heroimg" src="img/hero.jpg"> <!-- 1024x500 -->
             </figure>
         </div>
+        <!-- Insertion of logo -->
+        <div id="frontpg-logo">
+            <picture>
+                <img src="img/logo.png" alt="Fångamon Cabin Resort">
+            </picture>
+        </div>
 </section>

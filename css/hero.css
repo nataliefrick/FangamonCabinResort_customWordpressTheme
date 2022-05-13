@@ -1,7 +1,7 @@
 /* ----------Hero Section---------- */
 section#hero {
-    margin-top: -84px;
-    z-index: -10;
+    margin-top: 0;
+    z-index: -1;
 }
 
 
@@ -14,8 +14,22 @@ section#hero {
 
 #hero_pic figure {
     width: 100%;
+    margin: 0;
 }
 
 #heroimg {
     width: 100%;
+}
+
+#frontpg-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#frontpg-logo img {
+    object-fit: fill;
+    max-width: 200px;
+    height: 200px;
 }

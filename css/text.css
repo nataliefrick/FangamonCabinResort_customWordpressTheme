@@ -1,0 +1,31 @@
+    /* font-family: 'Crimson Pro', serif;  200 300 500 */
+    /* font-family: 'Kristi', cursive; */
+    /* font-family: 'Comforter Brush', cursive; */
+    /* Kristi 32  H2
+    Kristi 24  H3
+    Crimson Pro 16 P
+    Crimson Pro 20 nav */
+h1 { font-size: 32pt; }
+h2 { font-size: 24pt; }
+h3 { font-size: 24pt; }
+h4 { font-size: 32pt; }
+p { font-size: 16pt; }
+
+h4, h5, h6, p, a, li, input, textarea, .textarea { 
+    font-family: 'Crimson Pro', serif; 
+    color: #000000;
+}
+
+h1, h2, h3  {
+    font-family: 'Comforter Brush', cursive;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #000000;
+    font-weight: 100;
+    text-align: center;
+}
+
+p { font-size: 12pt; line-height: 20px;}
+
+span.big { font-size: 16pt; line-height: 22px; text-transform: uppercase;}
