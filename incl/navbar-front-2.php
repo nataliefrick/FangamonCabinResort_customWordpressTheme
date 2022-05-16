@@ -1,4 +1,4 @@
-<nav id="frontpg-nav-footer">
+<nav id="nav-footer">
   
         <ul id="nav-desktop-footer">
             <li><a href="/cottages.php">Cottages</a></li>

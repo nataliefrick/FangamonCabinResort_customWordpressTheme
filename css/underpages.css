@@ -1,0 +1,102 @@
+header#under {
+    position: sticky;
+    width: 100%;
+    background-color: #F4F4F4;
+    /* background-color: rgba(237, 244, 237, 0.9); */   
+}
+
+nav#nav-header {
+    padding: 5px 0;
+}
+
+.title-subpage {
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+@media (min-width: 771px) {
+    ul#nav-desktop-footer,
+    #nav-desktop-footer,
+    #nav-desktop-header {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+nav#nav-footer a,
+nav#nav-footer li,
+nav#nav-header a,
+nav#nav-header li { 
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 100;
+        padding: 10px 16px;
+        font-size: 16pt;
+}
+
+@media (max-width: 770px) {
+    nav#nav-footer a,
+    nav#nav-footer li {
+    padding: 4px;
+    font-size: 16pt;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 1025px) {
+    nav#nav-desktop-footer a,
+    nav#nav-desktop-footer li,
+    nav#nav-header a,
+    nav#nav-header li { 
+        padding: 10px 16px;
+        font-size: 16pt;
+    }
+}
+
+@media (min-width: 1026px) {
+    nav#nav-footer a,
+    nav#nav-footer li,
+    nav#nav-header a,
+    nav#nav-header li {
+        padding: 10px 16px;
+        font-size: 18pt;
+    }
+}
+
+nav#nav-footer a:hover,
+nav#nav-header a:hover {
+    /* background-color: #50505080; */
+    text-decoration: underline;
+}
+
+#nav-desktop-footer ul, #nav-desktop-footer li,
+#nav-desktop-header ul, #nav-desktop-header li {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+}
+
+
+
+nav#nav-header
+ul#nav-desktop-header
+li a 
+
+#logo-header picture,
+li#logo-header picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+} 
+
+/* Activities Section */
+div.container {
+    width: 70%;
+    max-width: 1024px;
+}
+
+.activity {
+    height: 420px;
+}

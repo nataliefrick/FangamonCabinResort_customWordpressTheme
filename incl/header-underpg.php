@@ -42,7 +42,7 @@
 
 <body>
 <h1 class="dont-show">Fångamon Cabin Resort AB - Homepage</h1>
-    <header id="index">
+    <header id="under">
 
-        <?php include("incl/navbar-front-1.php"); ?>
+        <?php include("incl/navbar2.php"); ?>
         </header>

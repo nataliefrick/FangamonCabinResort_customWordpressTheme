@@ -1,4 +1,4 @@
-nav {
+nav#frontpg-nav-header {
     background-color: #00000050;
     padding: 5px 0;
 }
@@ -7,6 +7,12 @@ nav {
 ul#nav-desktop-footer {
     margin: 0;
     text-align: center;
+}
+
+li#logo-header picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 @media (max-width: 770px) {
@@ -35,8 +41,8 @@ ul#nav-desktop-footer {
     }
 }
 
-nav#frontpg-nav-footer a,
-nav#frontpg-nav-footer li,
+nav#nav-footer a,
+nav#nav-footer li,
 nav#frontpg-nav-header a,
 nav#frontpg-nav-header li { 
         color: #ffffff;
@@ -46,16 +52,16 @@ nav#frontpg-nav-header li {
 }
 
 @media (max-width: 770px) {
-    nav#frontpg-nav-footer a,
-    nav#frontpg-nav-footer li {
+    nav#nav-footer a,
+    nav#nav-footer li {
     padding: 4px;
     font-size: 16pt;
     }
 }
 
 @media (min-width: 771px) and (max-width: 1025px) {
-    nav#frontpg-nav-footer a,
-    nav#frontpg-nav-footer li,
+    nav#nav-footer a,
+    nav#nav-footer li,
     nav#frontpg-nav-header a,
     nav#frontpg-nav-header li { 
         padding: 10px;
@@ -64,16 +70,17 @@ nav#frontpg-nav-header li {
 }
 
 @media (min-width: 1026px) {
-    nav#frontpg-nav-footer a,
-    nav#frontpg-nav-footer li,
+    nav#nav-footer a,
+    nav#nav-footer li,
     nav#frontpg-nav-header a,
     nav#frontpg-nav-header li {
-        padding: 10px 20px;
+        padding: 10px 16px;
         font-size: 18pt;
     }
 }
 
-nav#frontpg-nav-footer a:hover,
+
+nav#nav-footer a:hover,
 nav#frontpg-nav-header a:hover {
     /* background-color: #50505080; */
     text-decoration: underline;
@@ -84,6 +91,19 @@ nav#frontpg-nav-header a:hover {
     list-style-type: none;
     padding: 0;
     display: inline-block;
+}
+
+div#logo-header-mobile {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#logo-header-mobile picture,
+div#logo-header-mobile picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
 }
 
 /* The Overlay (background) */

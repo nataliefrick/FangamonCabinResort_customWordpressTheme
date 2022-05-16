@@ -1,6 +1,7 @@
 <footer>
         <!-- Menu again -->
         <section id="menu-again">
+            <hr>
             <h3>Select one of the following to read more</h3>
             <?php include("incl/navbar-front-2.php"); ?>
         </section>

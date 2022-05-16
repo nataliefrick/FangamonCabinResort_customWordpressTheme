@@ -32,3 +32,4 @@ a:hover {
 }
 
 span.big { font-size: 16pt; line-height: 22px; text-transform: uppercase;}
+.text-centered { text-align: center!important;}
