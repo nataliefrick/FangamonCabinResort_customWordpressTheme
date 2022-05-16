@@ -6,7 +6,7 @@
     Crimson Pro 16 P
     Crimson Pro 20 nav */
 h1 { font-size: 32pt; }
-h2 { font-size: 24pt; }
+h2 { font-size: 24pt; } @media (max-width: 770px) { h2 { font-size: 20pt; } }
 h3 { font-size: 24pt; }
 h4 { font-size: 32pt; }
 p { font-size: 16pt; }

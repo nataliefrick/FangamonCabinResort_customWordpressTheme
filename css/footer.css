@@ -1,7 +1,36 @@
 footer {
     gap: 0;
     margin-bottom: 0;
+}
+
+@media (max-width: 430px) {
+    section#footer {
+        padding-top: 10%!important;
+        padding-bottom: 10%!important;
     }
+}
+
+@media (max-width: 770px) {
+    section#footer {
+        gap: 5px;     
+        flex-direction: row;
+        flex-wrap: wrap;
+    } 
+}
+@media (min-width: 771px) and (max-width: 1025px) {  
+    section#footer {
+        gap: 5px;     
+        flex-direction: row;
+        flex-wrap: nowrap;
+    } 
+}
+@media (min-width: 1026px) {     
+    section#footer {
+        gap: 50px;     
+        flex-direction: row;
+        flex-wrap: nowrap;
+    } 
+}
 
 section#footer {
     width: 100%;
@@ -9,16 +38,47 @@ section#footer {
     padding-bottom: 2%;
     background-color: #C4C4C4;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+
     justify-content: center;
-    gap: 50px;
 }
 
-div#col-1, div#col-2, div#col-3 {
-    width: 30%;
-    max-width: 300px;
+
+/* Menu again */
+section#menu-again {
+    margin-top: 60px;
+    width: 100%;
 }
+
+@media (max-width: 430px) {
+    div#col-1 {
+        width: 60%;
+    }
+    
+    div#col-2, div#col-3 {
+        margin-top: 50px;
+        width: 60%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 770px) {
+    div#col-1 {
+        width: 60%;
+    }
+
+    div#col-2, div#col-3 {
+        margin-top: 50px;
+        width: 40%;
+        text-align: center;
+    }
+}
+@media (min-width: 771px) {
+    div#col-1, div#col-2, div#col-3 {
+        width: 30%;
+        max-width: 300px;
+    }
+}
+
 
 /* column 1 */
 div#col-1 form {
@@ -28,7 +88,7 @@ div#col-1 form {
 }
 
 textarea#message, input {
-    width: 300px;
+    width: 98%; /*300px*/
     background-color: #ffffff50;
     border: 0;
     font-size: 1em;
@@ -42,7 +102,7 @@ textarea#message, input {
 input.submit {
     width: 100px;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 4px;
 }
 
 input.submit:hover {
@@ -58,9 +118,21 @@ div#logo-footer {
 }
 
 div#logo-footer picture img {
-    height: 220px;
     width: auto;
     object-fit: cover;
+}
+
+
+@media (max-width: 770px) {
+    div#logo-footer picture img {
+        height: 200px;
+    }
+
+}
+@media (min-width: 771px) {
+    div#logo-footer picture img {
+        height: 220px;
+    }
 }
 
 /* column3 */
@@ -79,9 +151,10 @@ div#col-3 hr {
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
-    margin: 20px 0; 
 }
 
+@media (max-width: 770px) { div#col-3 hr { margin: 20px auto; } }
+@media (min-width: 771px) { div#col-3 hr { margin: 20px 0; } }
 
 section#copyright {
     background-color: #363636;

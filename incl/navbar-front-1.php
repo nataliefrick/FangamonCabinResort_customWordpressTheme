@@ -1,7 +1,7 @@
-<nav id="frontpg-nav">
+<nav id="frontpg-nav-header">
     <!-- Desktop navbar -->
     
-        <ul id="nav-desktop" class="hide-onMobile">
+        <ul id="nav-desktop-header" class="hide-onMobile-flex">
             <li><a href="/cottages.php">Cottages</a></li>
             <li><a href="/restaurant.php">Restaurant</a></li>
             <li><a href="/activities.php">Activities</a></li>

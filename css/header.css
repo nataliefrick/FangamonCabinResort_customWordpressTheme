@@ -5,8 +5,13 @@ header {
 }
 
 #title {
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin: 1% 10%;
+}
+
+@media (max-width: 430px) {
+    #title {
+        margin: 15% 10%;
+    }
 }
 
 #description {
@@ -14,9 +19,21 @@ header {
     background-color: #F4F4F4;
 }
 
+
+@media (max-width: 770px) { 
+    #description div {
+        width: 85%; 
+    } 
+}
+
+@media (min-width: 771px) { 
+    #description div {
+        width: 60%;
+        max-width: 1024px;
+    } 
+}
+
 #description div {
-    width: 60%;
-    max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -36,6 +53,24 @@ header {
     width: 240px;
     height: 240px;
     object-fit: cover;
+}
+
+@media (max-width: 430px) {
+    #description div {
+        flex-direction: column;
+    }
+
+    #description picture {
+        width: 140px;
+        height: 140px;
+    }
+
+    #description picture img { 
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+    }
+
 }
 
 

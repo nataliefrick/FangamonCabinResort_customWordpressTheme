@@ -1,5 +1,11 @@
 <footer>
+        <!-- Menu again -->
+        <section id="menu-again">
+            <h3>Select one of the following to read more</h3>
+            <?php include("incl/navbar-front-2.php"); ?>
+        </section>
     <section id="footer">
+
         <div id="col-1">
             <h3>Contact Us!</h3>
                 <form action="">

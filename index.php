@@ -116,10 +116,6 @@ include("incl/hero.php"); ?>
     <img class="pic1" src="img/hosts.jpg" alt="a photo of the hosts">
 </section>
 
-<!-- Menu again -->
-<section id="menu-again">
-    <h3>Where to now?</h3>
-    <?php include("incl/navbar1.php"); ?>
-</section>
+
 
 <?php include("incl/footer.php");  ?>

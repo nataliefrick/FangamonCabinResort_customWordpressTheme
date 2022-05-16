@@ -38,18 +38,20 @@ html {
 .show-flex { display: flex; }
 .show-block { display: block; }
 
-@media (min-width: 881px) {
+@media (min-width: 771px) {
     .hide-onDesktop {display: none; }
-    .hide-onMobile { display: flex; }
+    .hide-onMobile-flex { display: flex; }
+    .hide-onMobile-block { display: block; }
     
 }
-@media (max-width: 880px) {
-    .hide-onDesktop {display: block; }
-    .hide-onMobile { display: none; }
+@media (max-width: 770px) {
+    .hide-onDesktop {display: flex; }
+    .hide-onMobile-flex { display: none; }
+    .hide-onMobile-block { display: none; }
 
 }
 
-@media (min-width: 881px) and (max-width: 1199px) {
+@media (min-width: 771px) and (max-width: 1199px) {
     .hide-onTablet { 
         display: none; }
 }
@@ -64,3 +66,29 @@ html {
     background-color: #F4F4F4;
 }
 
+/* Scrollbar styling */
+/* width */
+/* ::-webkit-scrollbar {
+    width: 2px;
+    height: 6px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+  } */
+  
+  /* Track */
+  /* ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 15%;
+  } */
+   
+  /* Handle */
+  /* ::-webkit-scrollbar-thumb {
+    background: #c4c4c4; 
+    border-radius: 15%;
+  } */
+  
+  /* Handle on hover */
+  /* ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    border-radius: 15%;
+  } */

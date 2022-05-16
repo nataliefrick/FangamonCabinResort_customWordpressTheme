@@ -1,31 +1,86 @@
 nav {
     background-color: #00000050;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
-#nav-desktop {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding:0;
+
+ul#nav-desktop-footer {
+    margin: 0;
+    text-align: center;
 }
 
-nav#frontpg-nav a {
-    color: #ffffff;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 18pt;
-    font-weight: 100;
+@media (max-width: 770px) {
+    #nav-desktop-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
 }
 
-nav#frontpg-nav a:hover {
+@media (min-width: 771px) {
+    #nav-desktop-footer,
+    #nav-desktop-header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .hide-onDesktop {
+        display: block;
+    }
+}
+
+nav#frontpg-nav-footer a,
+nav#frontpg-nav-footer li,
+nav#frontpg-nav-header a,
+nav#frontpg-nav-header li { 
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 100;
+}
+
+@media (max-width: 770px) {
+    nav#frontpg-nav-footer a,
+    nav#frontpg-nav-footer li {
+    padding: 4px;
+    font-size: 16pt;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 1025px) {
+    nav#frontpg-nav-footer a,
+    nav#frontpg-nav-footer li,
+    nav#frontpg-nav-header a,
+    nav#frontpg-nav-header li { 
+        padding: 10px;
+        font-size: 18pt;
+    }
+}
+
+@media (min-width: 1026px) {
+    nav#frontpg-nav-footer a,
+    nav#frontpg-nav-footer li,
+    nav#frontpg-nav-header a,
+    nav#frontpg-nav-header li {
+        padding: 10px 20px;
+        font-size: 18pt;
+    }
+}
+
+nav#frontpg-nav-footer a:hover,
+nav#frontpg-nav-header a:hover {
     /* background-color: #50505080; */
     text-decoration: underline;
 }
 
-#nav-desktop ul, #nav-desktop li {
+#nav-desktop-footer ul, #nav-desktop-footer li,
+#nav-desktop-header ul, #nav-desktop-header li {
     list-style-type: none;
     padding: 0;
     display: inline-block;
@@ -73,9 +128,11 @@ nav#frontpg-nav a:hover {
 }
 
 .icon {
-    color:rgba(0,0,0);
+    color: #ffffff;
     border-radius: 50%;
     padding: 0.4em 0.7em;
+    display: flex;
+    justify-content: center;
 }
 
 .closebtn {
