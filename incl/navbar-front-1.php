@@ -11,7 +11,7 @@
             </picture>
             </li>
             <li><a href="/cms project/activities.php">Activities</a></li>
-            <li><a href="/cms project/blog.php">Whats New</a></li>
+            <li><a href="/cms project/blog.php">News</a></li>
             <li><a href="/cms project/book.php">Book</a></li>
         </ul>
 

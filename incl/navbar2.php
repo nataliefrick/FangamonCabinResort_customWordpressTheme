@@ -11,7 +11,7 @@
             </picture>
             </li>
             <li><a href="/cms project/activities.php">Activities</a></li>
-            <li><a href="/cms project/blog.php">Whats New</a></li>
+            <li><a href="/cms project/blog.php">News</a></li>
             <li><a href="/cms project/book.php">Book</a></li>
         </ul>
 
@@ -35,7 +35,7 @@
             <li><a href="/cottages.php">Cottages</a></li>
             <li><a href="/restaurant.php">Restaurant</a></li>
             <li><a href="/activities.php">Activities</a></li>
-            <li><a href="/blog.php">Whats New</a></li>
+            <li><a href="/blog.php">News</a></li>
             <li><a href="/book.php">Book</a></li>
             </div>
         </div>

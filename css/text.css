@@ -27,6 +27,14 @@ h1, h2, h3  {
 }
 
 p { font-size: 12pt; line-height: 20px;}
+
+p.publish-date {
+    font-size: 10pt;
+    line-height: 10pt;
+    font-style: italic;
+    margin: 0 auto;
+}
+
 a:hover {
     color: #C4C4C4;
 }
