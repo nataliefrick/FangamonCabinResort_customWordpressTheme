@@ -208,10 +208,96 @@ section#booking form div.activities {
 section#booking form div.activities,
 section#booking form div.row {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 25px;
+    
+}
+@media (min-width: 1051px) {
+    section#booking form div.activities,
+    section#booking form div.row {
+        flex-direction: row;
+        gap: 25px;
+        
+    }
+
+    section#booking form div.row-fullwidth {
+        width: 88%;
+    }
+
+    div#form-col-1, div#form-col-2 {
+        max-width: 350px;
+        width: 50%;
+    }
+}
+
+@media (min-width: 850px) and (max-width: 1050px) {
+    section#booking form div.row-fullwidth,
+    section#booking form div.activities,
+    section#booking form div.row {
+        flex-direction: column;
+        gap: 0;
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div#form-col-1, div#form-col-2 {
+        width: 100%;        
+    }
+
+    select.grey {
+        width: 275px; 
+    }
+}
+
+@media (max-width: 850px) {
+    section#booking form div.row-fullwidth,
+    section#booking form div.activities,
+    section#booking form div.row {
+        flex-direction: column;
+        gap: 0;
+        width: 55%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div#form-col-1, div#form-col-2 {
+        width: 100%;        
+    }
+
+    select.grey {
+        width: 100%; 
+    }
+
+    fieldset.flex-row {
+        flex-direction: column!important;
+        width: 95%;
+    }
+
+    /* section#booking input, */
+    textarea#booking-message,
+    section#booking label.width {
+        width: inherit!important;
+    }
+
+    fieldset.row-2a, section#booking form div.row-2a {
+        flex-direction: column!important;
+        gap: 0!important;
+    }
+
+    section#booking form div.row-2a div fieldset{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0;
+        width: 240px!important;
+    }
+    section#booking form div.row-2a div fieldset label{
+        width: 100%!important;
+    }
+    input#small-cabin {
+        width: 20px;
+    }
+
 }
 
 
@@ -220,7 +306,6 @@ section#booking form div.row-fullwidth {
     flex-direction: column;
     justify-content: flex-start;
     gap: 0;
-    width: 88%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -298,7 +383,7 @@ section#booking input.checkbox {
 
 section#booking label.checkbox {
     width: 40px;
-    margin: 0 0 0 -15px;
+    margin-left: 5px;
     padding: 0;
 }
 
@@ -315,8 +400,6 @@ section#booking input#checkout {
 
 div#form-col-1,
 div#form-col-2 {
-    width: 50%;
-    max-width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -347,4 +430,14 @@ input.availability {
     margin-left: auto!important;
     margin-right: 75px!important;
     margin-top: 20px;
+}
+
+div.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+div.addons {
+    margin-bottom: 30px;
 }

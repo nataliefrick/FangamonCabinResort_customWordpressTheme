@@ -77,7 +77,7 @@ include("incl/header-underpg.php");  ?>
                 <h4>Add-ons</h4>
                 <p>If you already know that you are wanting dinners, lunches or guided activities, please use this part of the form to let us know. This form books add-ons for all guests in your party. You are always welcome to add on to your package during your stay. Please note that we need 24 hrs notice for any add-ons or cancellations of previously booked add-ons.</p>
             </div>
-            <div class="row"> <!-- row1 -->
+            <div class="row addons"> <!-- row1 -->
                 <fieldset class="flex-row">
                     <label class="label" for="day1">Day 1:</label>
                     <input class="date" type="date" id="day1" name="day1">
@@ -93,17 +93,18 @@ include("incl/header-underpg.php");  ?>
                         <option value="5">Downhill skiing</option>
                     </select>
                 </fieldset>
-                
-                <input type="checkbox" class="checkbox" id="lunch1" name="lunch" value="lunch">   
-                <label class="nocolor checkbox" for="lunch1">Lunch</label>
-            
-                <input type="checkbox" class="checkbox" id="dinner1" name="dinner" value="dinner">
-                <label class="nocolor checkbox" for="dinner1">Dinner</label>
-              
-
+                <div class="flex-row">
+                    <fieldset>
+                    <input type="checkbox" class="checkbox" id="lunch1" name="lunch" value="lunch">   
+                    <label class="nocolor checkbox" for="lunch1">Lunch</label>
+                    </fieldset><fieldset>
+                    <input type="checkbox" class="checkbox" id="dinner1" name="dinner" value="dinner">
+                    <label class="nocolor checkbox" for="dinner1">Dinner</label>
+                    </fieldset>
+                </div>
 
             </div>
-            <div class="row"> <!-- row1 -->
+            <div class="row addons"> <!-- row2 -->
                 <fieldset class="flex-row">
                     <label class="label" for="day2">Day 2:</label>
                     <input class="date" type="date" id="day2" name="day2">
@@ -119,14 +120,17 @@ include("incl/header-underpg.php");  ?>
                         <option value="5">Downhill skiing</option>
                     </select>
                 </fieldset>
-                
-                <input type="checkbox" class="checkbox" id="lunch2" name="lunch" value="lunch">   
-                <label class="nocolor checkbox" for="lunch2">Lunch</label>
-            
-                <input type="checkbox" class="checkbox" id="dinner2" name="dinner" value="dinner">
-                <label class="nocolor checkbox" for="dinner2">Dinner</label>
+                <div class="flex-row">
+                    <fieldset>
+                    <input type="checkbox" class="checkbox" id="lunch2" name="lunch" value="lunch">   
+                    <label class="nocolor checkbox" for="lunch2">Lunch</label>
+                    </fieldset><fieldset>
+                    <input type="checkbox" class="checkbox" id="dinner2" name="dinner" value="dinner">
+                    <label class="nocolor checkbox" for="dinner2">Dinner</label>
+                    </fieldset>
+                </div>
             </div>
-            <div class="row"> <!-- row 3 -->
+            <div class="row addons"> <!-- row 3 -->
                 <fieldset class="flex-row">
                     <label class="label" for="day3">Day 3:</label>
                     <input class="date" type="date" id="day3" name="day3">
@@ -142,12 +146,15 @@ include("incl/header-underpg.php");  ?>
                         <option value="5">Downhill skiing</option>
                     </select>
                 </fieldset>
-                
-                <input type="checkbox" class="checkbox" id="lunch3" name="lunch" value="lunch">   
-                <label class="nocolor checkbox" for="lunch3">Lunch</label>
-            
-                <input type="checkbox" class="checkbox" id="dinner3" name="dinner" value="dinner">
-                <label class="nocolor checkbox" for="dinner3">Dinner</label>
+                <div class="flex-row">
+                    <fieldset>
+                    <input type="checkbox" class="checkbox" id="lunch3" name="lunch" value="lunch">   
+                    <label class="nocolor checkbox" for="lunch3">Lunch</label>
+                    </fieldset><fieldset>
+                    <input type="checkbox" class="checkbox" id="dinner3" name="dinner" value="dinner">
+                    <label class="nocolor checkbox" for="dinner3">Dinner</label>
+                    </fieldset>
+                </div>
             </div>
             <div class="row">
                 <input class="submit availability" type="submit" value="SUBMIT">
