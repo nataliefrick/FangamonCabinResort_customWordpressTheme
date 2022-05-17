@@ -14,7 +14,7 @@ include("incl/header-underpg.php");  ?>
 
 <!-- Title & Description Section -->
 <section class="title-subpage">
-    <h2>Activities we offer</h2>
+    <h3>Activities we offer</h3>
 </section>
 
 <!-- Activities -->

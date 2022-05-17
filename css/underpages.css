@@ -128,51 +128,12 @@ div.container {
     }
 }
 
-/* @media (max-width: 430px) { */
-    /* #restaurant,
-    {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        padding-top: 10%!important;
-        padding-bottom: 10%!important;
-    }*/
-
-    /* #restaurant
-     {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 6%;
-        padding-bottom: 6%;
-    }*/
-
-    /* #restaurant article.card,
-     {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
-    }*/
-/* } */
-
-/* @media (min-width: 431px) and (max-width: 500px) { */
-    /* #restaurant article.card,
-    {
-        width: 475px; // width: 90%;
-
-    }*/
-/* } */
-
- @media (max-width: 770px) {
+@media (max-width: 770px) {
 
     #restaurant div.row {
         width: 100%;
         flex-direction: column;
-        /* margin-left: 25px; */
         justify-content: center;
-        /* margin-right: auto; */
-        /* overflow-y: scroll; */
         gap: 5px;
     }
 
@@ -181,7 +142,6 @@ div.container {
         width: 0;
         height: 0;
         order: 2;
-        /* background-color: #e8e8e8; */
     }
 
     .restaurant-pic picture img {
@@ -199,7 +159,6 @@ div.container {
     }
 
     #mobile-picture-gallery {
-        /* max-width: 1024px; */
         margin-left: auto;
         margin-right: auto;
         padding-top: 3%;
@@ -224,29 +183,168 @@ div.container {
     }
 
 }
-    /* #restaurant
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 3%;
-        padding-bottom: 3%;
-        gap: 2%;
-    }*/
 
-    /* #restaurant article.card,
-    {
-        width: 90%; // width: 475px;
-        margin-bottom: 3%;
-        margin-left: auto;
-        margin-right: auto;
-    }*/
+/* Booking Section */
 
-    /* #restaurant article.restaurant-pic picture img,
-    #restaurant article.restaurant-desc picture img,
-    {
-        width: 475px;
-    } */
- /* }  */
 
+section#booking form {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+section#booking form h3 {
+    margin-bottom: 3%;
+}
+
+section#booking form div.activities {
+    align-items: center!important;
+    gap: 10px!important;
+}
+
+section#booking form div.activities,
+section#booking form div.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+
+section#booking form div.row-fullwidth {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+textarea#booking-message {
+    width: 98%;
+}
+
+section#booking input,
+textarea#booking-message {
+    background-color: #E8E8E8;
+    border: 0;
+    font-size: 1em;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: 0;
+    line-height: 20pt;
+}
+
+select.grey {
+    background-color: #E8E8E8;
+    color: #7f7f7f;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
+textarea#booking-message {
+    height: 100px;
+}
+
+section#booking label.width {
+    width: 102px;
+}
+
+section#booking label {
+    width: 124px;
+    background-color: #E8E8E8;
+    color: #7f7f7f;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 1em;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: 0;
+    line-height: 20pt;
+}
+section#booking label.nocolor {
+    background-color: transparent;
+    text-transform: none;
+    color: #000000;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+fieldset.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+fieldset.flex-row label {
+    padding: 0 10px!important;
+}
+
+section#booking input.checkbox {
+    width: 10px;
+    margin: 8px 0 0 0;
+    padding: 0;
+}
+
+section#booking label.checkbox {
+    width: 40px;
+    margin: 0 0 0 -15px;
+    padding: 0;
+}
+
+section#booking input.date,
+section#booking input#checkin,
+section#booking input#checkin,
+section#booking input#checkout {
+    /* width: 98%; */
+    background-color: #ffffff;
+    /* color: #000000; */
+    border: 1px solid #E8E8E8;
+    text-align: center;
+}
+
+div#form-col-1,
+div#form-col-2 {
+    width: 50%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+fieldset.row-2a,
+section#booking form div.row-2a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+fieldset.row-2b {
+    display: flex;
+    flex-direction: row;
+}
+
+input#small-cabin,
+input#large-cabin {
+    width: 10px!important;
+
+}
+
+input.availability {
+    margin-left: auto!important;
+    margin-right: 75px!important;
+    margin-top: 20px;
+}

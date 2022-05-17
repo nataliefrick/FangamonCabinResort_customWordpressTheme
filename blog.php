@@ -2,7 +2,10 @@
 include("incl/header-underpg.php");  ?>
 <h1 class="title-subpage">Whats happening at Camp</h1>
 <div class="seperator-line"></div>
-
+<!-- Title & Description Section -->
+<section class="title-subpage">
+    <h3>Read up on all the happenings!</h3>
+</section>
 <!-- Blogroll -->
 <section id="blog">
     <h2 class="dont-show">Here is a list of what is happening</h2>

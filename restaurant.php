@@ -14,7 +14,7 @@ include("incl/header-underpg.php");  ?>
 
 <!-- Title & Description Section -->
 <section class="title-subpage">
-    <h2>Serving Breakfast, Lunch and Dinner</h2>
+    <h3>Serving Breakfast, Lunch and Dinner</h3>
 </section>
 
 <!-- Restaurant -->
