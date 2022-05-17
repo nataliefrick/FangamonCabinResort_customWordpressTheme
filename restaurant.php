@@ -17,7 +17,7 @@ include("incl/header-underpg.php");  ?>
     <h2>Serving Breakfast, Lunch and Dinner</h2>
 </section>
 
-<!-- Activities -->
+<!-- Restaurant -->
 <section id="restaurant">
     <h2 class="dont-show">he Restaurant serving Breakfast, Lunch and Dinner</h2>
         <div class="row">
@@ -46,7 +46,7 @@ include("incl/header-underpg.php");  ?>
         </div>
         <div class="row">
             <article class="card restaurant-pic">
-                <h2 class="dont-show">restaurantx</h2>
+                <h2 class="dont-show">restaurant</h2>
                 <picture>
                     <img src="img/restaurant.jpg" alt="restaurant">
                 </picture>
@@ -54,12 +54,12 @@ include("incl/header-underpg.php");  ?>
             <article class="card restaurant-pic">
                 <h2 class="dont-show">lunchbox</h2>
                 <picture>
-                    <img src="img/lunch2.jpg" alt="lunchbox">
+                    <img src="img/lunchbox2.jpg" alt="lunchbox">
                 </picture>
             </article>
             <article class="card restaurant-desc">
                 <picture>
-                    <img src="img/lunch1.jpg" alt="lunch">
+                    <img src="img/lunchbox1.jpg" alt="lunch">
                 </picture>
                 <div class="content">
                     <h3>Lunch</h3>
@@ -83,7 +83,7 @@ include("incl/header-underpg.php");  ?>
             <article class="card restaurant-pic">
                 <h2 class="dont-show">dinner</h2>
                 <picture>
-                    <img src="img/dinner1.jpg" alt="dinner plate">
+                    <img src="img/dinner2.jpg" alt="dinner plate">
                 </picture>
             </article>
 
@@ -97,5 +97,28 @@ include("incl/header-underpg.php");  ?>
    
 </section>
 
+<!-- Mobile Picture Gallery section -->
+<section id="mobile-picture-gallery">
+    <h2 class="dont-show">Picture Gallery</h2>
+    <picture>
+        <img src="img/breakfast1.jpg" alt="breakfast1.jpg">
+    </picture>
+    <picture>
+        <img src="img/breakfast2.jpg" alt="breakfast2.jpg">
+    </picture>
+    <picture>
+        <img src="img/restaurant.jpg" alt="resort details">
+    </picture>
+    <picture>
+        <img src="img/lunchbox2.jpg" alt="resort details">
+    </picture>
+    <picture>
+        <img src="img/dinner2.jpg" alt="resort details">
+    </picture>
+    <picture>
+        <img src="img/dinner3.jpg" alt="resort details">
+    </picture>
+
+</section>
 
 <?php include("incl/footer.php");  ?>

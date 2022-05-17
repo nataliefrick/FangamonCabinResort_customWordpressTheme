@@ -2,7 +2,7 @@ header#under {
     position: sticky;
     width: 100%;
     background-color: #F4F4F4;
-    /* background-color: rgba(237, 244, 237, 0.9); */   
+    /* background-color: rgba(237, 244, 237, 0.9); */
 }
 
 nav#nav-header {
@@ -28,7 +28,7 @@ nav#nav-header {
 nav#nav-footer a,
 nav#nav-footer li,
 nav#nav-header a,
-nav#nav-header li { 
+nav#nav-header li {
         color: #000000;
         text-transform: uppercase;
         text-decoration: none;
@@ -49,7 +49,7 @@ nav#nav-header li {
     nav#nav-desktop-footer a,
     nav#nav-desktop-footer li,
     nav#nav-header a,
-    nav#nav-header li { 
+    nav#nav-header li {
         padding: 10px 16px;
         font-size: 16pt;
     }
@@ -79,17 +79,17 @@ nav#nav-header a:hover {
 }
 
 
-
+/*
 nav#nav-header
 ul#nav-desktop-header
-li a 
+li a  */
 
 #logo-header picture,
 li#logo-header picture img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-} 
+}
 
 /* Activities Section */
 div.container {
@@ -97,11 +97,156 @@ div.container {
     max-width: 1024px;
 }
 
+.restaurant-pic,
+.restaurant-desc,
 .blog,
 .activity {
     height: 450px;
 }
 
+/* Restaurant Section */
+/* #restaurant */
+#restaurant div.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 25px;
+    row-gap: 25px;
+    /* overflow-y: scroll; */
+}
 
 
+
+@media (min-width: 771px) {
+    .restaurant-pic picture img {
+        height: 450px;
+        object-fit: cover;
+    }
+
+    #mobile-picture-gallery {
+        display: none;
+    }
+}
+
+/* @media (max-width: 430px) { */
+    /* #restaurant,
+    {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-top: 10%!important;
+        padding-bottom: 10%!important;
+    }*/
+
+    /* #restaurant
+     {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }*/
+
+    /* #restaurant article.card,
+     {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }*/
+/* } */
+
+/* @media (min-width: 431px) and (max-width: 500px) { */
+    /* #restaurant article.card,
+    {
+        width: 475px; // width: 90%;
+
+    }*/
+/* } */
+
+ @media (max-width: 770px) {
+
+    #restaurant div.row {
+        width: 100%;
+        flex-direction: column;
+        /* margin-left: 25px; */
+        justify-content: center;
+        /* margin-right: auto; */
+        /* overflow-y: scroll; */
+        gap: 5px;
+    }
+
+    .restaurant-pic {
+        display: none;
+        width: 0;
+        height: 0;
+        order: 2;
+        /* background-color: #e8e8e8; */
+    }
+
+    .restaurant-pic picture img {
+        display: none;
+    }
+
+    .restaurant-desc {
+        width: 60%;
+        margin: 0 auto;
+        order: 1;
+    }
+
+    .restaurant-desc picture img {
+        height: 240px!important;
+    }
+
+    #mobile-picture-gallery {
+        /* max-width: 1024px; */
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    #mobile-picture-gallery picture img {
+        width: 175px;
+        height: 266px;
+        object-fit: cover;
+    }
+
+    #mobile-picture-gallery {
+        width: 80%;
+        flex-wrap: nowrap;
+        overflow-y: scroll;
+        max-height: 300px;
+        justify-content: flex-start;
+    }
+
+}
+    /* #restaurant
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        gap: 2%;
+    }*/
+
+    /* #restaurant article.card,
+    {
+        width: 90%; // width: 475px;
+        margin-bottom: 3%;
+        margin-left: auto;
+        margin-right: auto;
+    }*/
+
+    /* #restaurant article.restaurant-pic picture img,
+    #restaurant article.restaurant-desc picture img,
+    {
+        width: 475px;
+    } */
+ /* }  */
 

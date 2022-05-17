@@ -1,5 +1,5 @@
 @media (max-width: 430px) {
-    #blog, #activities, #resort-sections, section#description, section#map, section#picture-gallery, section#your-hosts {
+    #restaurant, #blog, #activities, #resort-sections, section#description, section#map, section#picture-gallery, section#your-hosts {
         margin-top: 10%;
         margin-bottom: 10%;
         padding-top: 10%!important;
@@ -15,6 +15,7 @@
         padding-bottom: 6%;
     }
 
+    #restaurant article.card,
     #blog article.card,
     #activities article.card,
     #resort-sections article.card {
@@ -26,6 +27,7 @@
 }
 
 @media (min-width: 431px) and (max-width: 500px) {
+    /* #restaurant article.card, */
     #blog article.card,
     #activities article.card,
     #resort-sections article.card {
@@ -45,6 +47,7 @@
         gap: 2%;
     }
 
+    /* #restaurant article.card, */
     #blog article.card,
     #activities article.card,
     #resort-sections article.card {
@@ -55,6 +58,8 @@
         margin-right: auto;
     }
 
+    /* #restaurant article.restaurant-pic picture img,
+    #restaurant article.restaurant-desc picture img, */
     #blog article.card picture img,
     #activities article.card picture img,
     #resort-sections article.card picture img {
@@ -63,7 +68,8 @@
 }
 
 @media (min-width: 771px) { 
-    #blog,
+    #restaurant,
+    #blog, 
     #activities, #resort-sections {
         width: 90%;
         max-width: 1024px;
@@ -80,12 +86,15 @@
         margin-right: auto;
     }
   
-    
+    #restaurant article.card,
     #blog article.card,
     #activities article.card,
     #resort-sections article.card {
         width: 280px;
     }
+
+    #restaurant article.restaurant-pic picture img,
+    #restaurant article.restaurant-desc picture img,
     #blog article.card picture img,
     #activities article.card picture img,
     #resort-sections article.card picture img {
@@ -93,6 +102,7 @@
     }
 }
 
+#restaurant article.card,
 #blog article.card,
 #activities article.card,
 #resort-sections article.card {
@@ -101,7 +111,8 @@
     flex-direction: column;
 }
 
-#blo article.card picture img,
+#restaurant article.restaurant-desc picture img,
+#blog article.card picture img,
 #activities article.card picture img,
 #resort-sections article.card picture img {
     width: 100%;
@@ -110,6 +121,7 @@
     object-position: center bottom;
 }
 
+#restaurant article.card div.content,
 #blog article.card div.content,
 #activities article.card div.content,
 #resort-sections article.card div.content {
@@ -183,7 +195,6 @@ section#picture-gallery picture img {
     width: 175px;
     height: 266px;
     object-fit: cover;
-    
 }
 
 
