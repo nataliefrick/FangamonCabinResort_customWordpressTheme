@@ -458,11 +458,22 @@ article.blogpost {
 article.blogpost picture {
     width: 360px;
     height: 542px;
+    /* position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0; */
 }
 
 article.blogpost picture img {
     width: 360px;
     height: 542px;
+    /* display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%); */
     object-fit: cover;
     object-position: center center;
 }
