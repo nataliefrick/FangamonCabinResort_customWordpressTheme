@@ -4,15 +4,18 @@
 add_theme_support( 'block-templates' );
 
 // register menu
-add_action('init', 'register_my_menus');
 
-function register_my_menus () {
-    register_nav_menus(array(
-        'main-menu-left' => 'Header-left' 
-        'main-menu-right' => 'Header-right'  
-        'footer-menu' => 'Footer-right'  // adds a menu location element
-    ));
-}
+function register_my_menus() {
+    register_nav_menus(
+      array(
+        // adds a menu location element
+        'header-menu-left' => __('Header Menu-left'),
+        'header-menu-right' => __('Header Menu-right'),
+        'footer-menu' => __('Footer Menu')
+        )
+    );
+  }
+  add_action( 'init', 'register_my_menus' );
 
 // dynamic logo
 add_theme_support( 'custom-logo' );

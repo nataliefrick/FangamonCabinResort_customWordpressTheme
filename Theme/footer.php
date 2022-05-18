@@ -3,7 +3,13 @@
         <section id="menu-again">
             <hr>
             <h3>Select one of the following to read more</h3>
-            <?php include("incl/navbar-front-2.php"); ?>
+            <nav id="nav-footer">
+  
+        <ul id="nav-desktop-footer">
+        <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+        </ul>
+    </div>
+</nav>
         </section>
     <section id="footer">
 
@@ -46,7 +52,7 @@
 </footer>
     
     <!-- Hamburger Menu & Picture Gallery -->
-    <script src="js/main.js"></script>
+    <script src="<?= get_template_directory_uri();?>/js/main.js"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f9711d7422.js" crossorigin="anonymous"></script>
