@@ -441,3 +441,51 @@ div.flex-row {
 div.addons {
     margin-bottom: 30px;
 }
+
+/* single blogpost page */
+section#blogpost article {
+    width: 80%;
+    margin: 3% auto;
+    background-color: #ffffff;
+    
+}
+
+article.blogpost {
+    display: flex;
+    flex-direction: rows;
+}
+
+article.blogpost picture {
+    width: 360px;
+    height: 542px;
+}
+
+article.blogpost picture img {
+    width: 360px;
+    height: 542px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+article.blogpost div.content {
+    padding: 40px;
+}
+
+article.blogpost div.content h3 {
+    text-align: left;
+}
+
+section#blog-gallery {
+    display: flex;
+    flex-direction: rows;
+    flex-wrap: nowrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+section#blog-gallery picture img {
+    width: 255px;
+    height: 156px;
+    object-fit: cover;
+    object-position: center center;
+}

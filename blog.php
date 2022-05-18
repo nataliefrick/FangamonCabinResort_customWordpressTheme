@@ -21,7 +21,7 @@ include("incl/header-underpg.php");  ?>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </article>
-        <article class="card activity">
+        <article class="card blog">
             <picture>
                 <img src="img/activity1.jpg" alt="activity">
             </picture>
@@ -32,7 +32,7 @@ include("incl/header-underpg.php");  ?>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </article>
-        <article class="card activity">
+        <article class="card blog">
             <picture>
                 <img src="img/activity1.jpg" alt="activity">
             </picture>
@@ -43,7 +43,7 @@ include("incl/header-underpg.php");  ?>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </article>
-        <article class="card activity">
+        <article class="card blog">
             <picture>
                 <img src="img/activity1.jpg" alt="activity">
             </picture>
@@ -54,7 +54,7 @@ include("incl/header-underpg.php");  ?>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </article>
-        <article class="card activity">
+        <article class="card blog">
             <picture>
                 <img src="img/activity1.jpg" alt="activity">
             </picture>
@@ -65,7 +65,7 @@ include("incl/header-underpg.php");  ?>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </article>
-        <article class="card activity">
+        <article class="card blog">
             <picture>
                 <img src="img/activity1.jpg" alt="activity">
             </picture>
