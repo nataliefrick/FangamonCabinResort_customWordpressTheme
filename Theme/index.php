@@ -5,7 +5,7 @@
         <h2 class="dont-show">Hero Section</h2>
         <div id="hero_pic">
             <figure>
-                <img id="heroimg" src="<?= get_template_directory_uri();?>/img/hero.jpg"> <!-- 1024x500 -->
+                <img id="heroimg" src="<?= header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width;?>"> <!-- 1024x500 -->
             </figure>
         </div>
     </section>  

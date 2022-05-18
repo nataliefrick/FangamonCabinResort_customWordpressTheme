@@ -35,11 +35,20 @@
             <ul id="nav-desktop-header" class="hide-onMobile-flex">
             <?php wp_nav_menu( array( 'theme_location' => 'header-menu-left' ) ); ?>
                 <li id="logo-header">
-                <picture>
+                <!-- <picture>
                     <img src="<?= get_template_directory_uri();?>/img/logo.png" alt="Fångamon Cabin Resort">
-                </picture>
+                </picture> -->
+
+                <!-- hide -->
+                <?php
+                if ( function_exists( 'the_custom_logo' ) ) { ?>
+                <div id="logo-header">
+                    <picture>
+                    <?php the_custom_logo(); } ?>
+                    </picture>
                 </li>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu-right' ) ); ?>
+                <!-- hide -->
             </ul>
             <!-- Mobile Navbar Small Screen -->
             <div class="hide-onDesktop">
@@ -47,6 +56,7 @@
                     <picture>
                         <img src="<?= get_template_directory_uri();?>/img/logo.png" alt="Fångamon Cabin Resort">
                     </picture>
+                    
                 </div>
                 <!-- The overlay -->
                 <div id="myNav" class="overlay">

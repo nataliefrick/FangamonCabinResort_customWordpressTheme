@@ -22,8 +22,8 @@ add_theme_support( 'custom-logo' );
 
 function header_custom_logo_setup() {
     $defaults = array(
-        'height'               => 100,
-        'width'                => 100,
+        'height'               => 500,
+        'width'                => 500,
         'flex-height'          => true,
         'flex-width'           => true,
         'header-text'          => array( 'site-title_line1', 'site-description' )
@@ -54,18 +54,25 @@ add_action( 'after_setup_theme', 'header_custom_logo_setup' );
 
 
 // dynamic herobilder (1920x646)
-add_theme_support('custom-header');
+$args = array(
+    'width' => 1840,
+    'height' => 900,
+    'header-text' => true,
+    'default-image' => get_template_directory_uri() . '/img/hero.jpg',
+    'uploads' => true
+);
 
-function hero_custom_header_setup() {
-    $args = array(
-        'width' => 1400,
-        'height' => 720,
-        'header-text' => true,
-        'default-image' => get_template_directory_uri() . '/img/hero.jpg',
-        'uploads' => true
-    );
-}
-add_action ( 'after_setup_theme', 'hero_custom_header_setup' );
+add_theme_support('custom-header', $args);
+// function hero_custom_header_setup() {
+//     $args = array(
+//         'width' => 1400,
+//         'height' => 720,
+//         'header-text' => true,
+//         'default-image' => get_template_directory_uri(); . '/img/hero.jpg',
+//         'uploads' => true
+//     );
+// }
+// add_action ( 'after_setup_theme', 'hero_custom_header_setup' );
 
 // featured images in posts
 add_theme_support( 'post-thumbnails' );
