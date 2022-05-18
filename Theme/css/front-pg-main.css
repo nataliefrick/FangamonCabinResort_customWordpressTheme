@@ -1,0 +1,381 @@
+@media (max-width: 430px) {
+    #restaurant, #blog, #activities, #resort-sections, section#description, section#map, section#picture-gallery, section#your-hosts {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-top: 10%!important;
+        padding-bottom: 10%!important;
+    }
+
+    #blog, #activities, #resort-sections {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
+
+    #restaurant article.card,
+    #blog article.card,
+    #activities article.card,
+    #resort-sections article.card {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 431px) and (max-width: 500px) {
+    /* #restaurant article.card, */
+    #blog article.card,
+    #activities article.card,
+    #resort-sections article.card {
+        width: 475px;
+        /* width: 90%; */
+    }
+}
+
+@media (min-width: 431px) and (max-width: 770px) {
+    #blog, #activities, #resort-sections {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        gap: 2%;
+    }
+
+    /* #restaurant article.card, */
+    #blog article.card,
+    #activities article.card,
+    #resort-sections article.card {
+        /* width: 475px; */
+        width: 90%;
+        margin-bottom: 3%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* #restaurant article.restaurant-pic picture img,
+    #restaurant article.restaurant-desc picture img, */
+    #blog article.card picture img,
+    #activities article.card picture img,
+    #resort-sections article.card picture img {
+        width: 475px;
+    }
+}
+
+@media (min-width: 771px) { 
+    #restaurant,
+    #blog, 
+    #activities, #resort-sections {
+        width: 90%;
+        max-width: 1024px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 25px;
+        row-gap: 25px;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    #restaurant article.card,
+    #blog article.card,
+    #activities article.card,
+    #resort-sections article.card {
+        width: 280px;
+    }
+
+    #restaurant article.restaurant-pic picture img,
+    #restaurant article.restaurant-desc picture img,
+    #blog article.card picture img,
+    #activities article.card picture img,
+    #resort-sections article.card picture img {
+        width: 280px;
+    }
+}
+
+#restaurant article.card,
+#blog article.card,
+#activities article.card,
+#resort-sections article.card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+#restaurant article.restaurant-desc picture img,
+#blog article.card picture img,
+#activities article.card picture img,
+#resort-sections article.card picture img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+#restaurant article.card div.content,
+#blog article.card div.content,
+#activities article.card div.content,
+#resort-sections article.card div.content {
+    padding: 5%;
+    text-align: center;
+}
+
+
+a.read-more {
+    text-transform: uppercase;
+}
+
+
+/* -------------Location section-------------  */
+
+section#map {
+    width: 100%;
+    background-color: #C4C4C4;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+
+@media (max-width: 330px) { article.content { width: 70%; } } 
+@media (min-width: 330px) and (max-width: 770px) { article.content { width: 85%; } } 
+@media (min-width: 771px) { article.content { width: 60%; } }
+
+article.content {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@media (max-width: 430px) {
+    .two-columns {
+        columns: 1;
+    }
+}
+
+@media (min-width: 431px) {
+    .two-columns {
+        columns: 2 auto;
+    }
+}
+
+span.gps {
+    font-style: italic;
+    text-align: center;
+}
+
+section#map img {
+    width: 100%;
+    height: auto;
+}
+
+/* -------------Picture Gallery section-------------  */
+section#picture-gallery {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+    
+section#picture-gallery picture img {
+    width: 175px;
+    height: 266px;
+    object-fit: cover;
+}
+
+
+@media (max-width: 1175px) {
+    section#picture-gallery {
+        width: 80%; 
+        flex-wrap: nowrap;
+        overflow-y: scroll;
+        max-height: 300px;
+        justify-content: flex-start;
+    }
+
+}
+
+@media (min-width: 1176px) and (max-width: 1450px) {
+    section#picture-gallery {
+        width: 80%; 
+        flex-wrap: wrap;
+        max-height: 550px;
+        justify-content: center;
+    }
+
+}
+
+@media (min-width: 1451px) {
+    section#picture-gallery {
+        width: 60%; 
+        flex-wrap: wrap;
+        max-height: 550px;
+        justify-content: center;
+    }
+    
+}
+
+
+/* -------------Hosts section-------------  */
+section#your-hosts {
+    padding: 3%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #E3E1E1;
+}
+
+@media (max-width: 500px) {
+    section#your-hosts {
+        width: 80%;
+        margin: 6% auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section#your-hosts div {
+        width: 90%;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section#your-hosts img.pic1 {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    section#your-hosts img.pic2 {
+        width: 150px!important;
+        margin-top: 0!important;
+    } 
+}
+
+
+/* @media (min-width: 331px) and (max-width: 430px) {
+    section#your-hosts {
+        width: 100%;
+        margin: 6% auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section#your-hosts div {
+        width: 90%;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+  
+    }
+
+    section#your-hosts img.pic1 {
+        margin-left: auto;
+        margin-right: 12%;
+    }
+
+    section#your-hosts img.pic2 {
+        width: 140px!important;
+        height: 140px!important;
+        margin-top: 40px!important;
+        margin-left: 25px;
+    }
+} */
+
+@media (min-width: 501px) and (max-width: 770px) {
+    section#your-hosts img.pic2  {
+        margin-left: 280px;
+    }
+
+}
+
+
+@media (min-width: 771px) and (max-width: 1026px) { 
+        section#your-hosts img.pic2  {
+            margin-left: 310px;
+        }
+}
+
+@media (min-width: px) and (max-width: 1026px) {
+    section#your-hosts {
+        width: 85%;
+        max-width: 1024px;
+        min-width: 800px;
+        margin: 6% auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    section#your-hosts div {
+        width: 50%;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 1027px) {
+    section#your-hosts {
+        width: 85%;
+        max-width: 1024px;
+        min-width: 800px;
+        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    section#your-hosts div {
+        width: 50%;
+        margin-top: 30px;
+    }
+
+    section#your-hosts img.pic2  {
+        margin-left: 350px;
+    }
+}
+
+
+
+section#your-hosts p {
+    padding-right: 20px;
+}
+
+span.script {
+    font-family: 'Comforter Brush', cursive;
+    font-size: 24px;
+}
+
+section#your-hosts img.pic1 {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+} 
+
+section#your-hosts img.pic2 {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    z-index: 1;
+    margin-top: -43px;
+    margin-left: 380px;
+} 
+
+
+
+

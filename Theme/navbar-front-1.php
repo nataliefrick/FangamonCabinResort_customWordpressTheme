@@ -2,14 +2,17 @@
     <!-- Desktop navbar -->
     
         <ul id="nav-desktop-header" class="hide-onMobile-flex">
-            <li><a href="/cms project/index.php">Home</a></li>
-            <li><a href="/cms project/cottages.php">Cottages</a></li>
-            <li><a href="/cms project/restaurant.php">Restaurant</a></li>
-            <li id="logo-header">
-            <picture>
-                <img src="img/logo.png" alt="Fångamon Cabin Resort">
-            </picture>
-            </li>
+
+            <?php wp_nav_menu( array( 'theme_location' => 'left', 'menu_class' => 'nav-menu' ) ); ?>
+
+            <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
+                <li id="logo-header">
+                    <picture>
+                    <?php the_custom_logo(); } ?>
+                    </picture>
+                </li>
+            <?php wp_nav_menu( array( 'theme_location' => 'right', 'menu_class' => 'nav-menu' ) ); ?>
+            
             <li><a href="/cms project/activities.php">Activities</a></li>
             <li><a href="/cms project/blog.php">News</a></li>
             <li><a href="/cms project/book.php">Book</a></li>

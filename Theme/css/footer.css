@@ -1,0 +1,244 @@
+footer {
+    gap: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Menu again */
+section#menu-again {
+    padding-top: 60px;
+}
+
+section#menu-again hr {
+    width: 20%;
+    border-top: 1px solid #8e8e8e;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: 10px auto 30px auto;
+} 
+
+section#footer {
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #DEDEDE;
+    display: flex;
+    justify-content: center;
+}
+
+/* column 1 */
+div#col-1 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+textarea#message, input {
+    width: 98%; /*300px*/
+    background-color: #ffffff50;
+    border: 0;
+    font-size: 1em;
+    padding-left: 5px;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: 0;
+    line-height: 20pt;
+}
+
+input.submit {
+    width: 100px;
+    margin-left: auto;
+    margin-right: 4px;
+}
+
+input.submit:hover {
+    background-color: #ffffff;
+}
+
+/* column 2 */
+div#logo-footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#logo-footer picture img {
+    width: auto;
+    object-fit: cover;
+}
+
+/* column3 */
+div#col-3 ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+div#col-3 hr {
+    width: 60%;
+    border-top: 1px solid #8e8e8e;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+section#copyright {
+    background-color: #363636;
+    margin: 0;
+    margin-top: -16px;
+}
+
+section#copyright p {
+    padding: 0.5% 0;
+    color: #C4C4C4;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (max-width: 481px) {
+    section#footer {
+        /* width: 60%; */
+        padding-top: 10%!important;
+        padding-bottom: 10%!important;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    section#menu-again {
+        padding: 10px 40px 40px 40px;
+    }
+
+    div#col-1 {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    div#col-2, div#col-3 {
+        width: 60%;
+        margin-top: 50px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 482px) and (max-width: 770px) {
+    section#menu-again {
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    section#footer {
+        /* width: 60%; */
+        gap: 5px;     
+        flex-direction: column;
+    } 
+
+    div#col-1 {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+    div#col-2, div#col-3 {
+        margin-top: 50px;
+        width: 60%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 330px) {
+    /* column 2 */
+    div#logo-footer {
+        height: 192px;
+        width: 192x;
+
+    }
+
+    div#logo-footer picture img {
+        height: 192px;
+    }
+}
+
+@media (min-width: 330px) and (max-width: 770px) {
+    /* column 2 */
+    div#logo-footer {
+        height: 200px;
+        width: 200px;
+    }
+
+    
+    div#logo-footer picture img {
+        height: 200px;
+    }
+
+    div#col-3 hr { margin: 20px auto; }
+
+}
+
+@media (min-width: 771px) {
+    /* column 2 */
+    div#logo-footer {
+        height: 220px;
+        width: 220px;
+    }
+
+    div#logo-footer picture img {
+        height: 220px;
+    }
+
+    div#col-1, div#col-2, div#col-3 {
+        width: 30%;
+        max-width: 300px;
+    }
+
+    div#col-3 hr { margin: 20px 0; }
+}
+
+@media (min-width: 771px) and (max-width: 1025px) {  
+    section#footer {
+        /* width: 30%; */
+        gap: 5px;     
+        flex-direction: row;
+        flex-wrap: nowrap;
+    } 
+
+
+}
+@media (min-width: 1026px) {     
+    section#footer {
+        gap: 50px;     
+        flex-direction: row;
+        flex-wrap: nowrap;
+    } 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

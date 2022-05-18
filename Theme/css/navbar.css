@@ -1,0 +1,169 @@
+nav#frontpg-nav-header {
+    background-color: #00000050;
+    padding: 5px 0;
+}
+
+
+ul#nav-desktop-footer {
+    margin: 0;
+    text-align: center;
+}
+
+li#logo-header picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+@media (max-width: 770px) {
+    #nav-desktop-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+@media (min-width: 771px) {
+    #nav-desktop-footer,
+    #nav-desktop-header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .hide-onDesktop {
+        display: block;
+    }
+}
+
+nav#nav-footer a,
+nav#nav-footer li,
+nav#frontpg-nav-header a,
+nav#frontpg-nav-header li { 
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 100;
+}
+
+@media (max-width: 770px) {
+    nav#nav-footer a,
+    nav#nav-footer li {
+    padding: 4px;
+    font-size: 16pt;
+    }
+}
+
+@media (min-width: 771px) and (max-width: 1025px) {
+    nav#nav-footer a,
+    nav#nav-footer li,
+    nav#frontpg-nav-header a,
+    nav#frontpg-nav-header li { 
+        padding: 10px;
+        font-size: 18pt;
+    }
+}
+
+@media (min-width: 1026px) {
+    nav#nav-footer a,
+    nav#nav-footer li,
+    nav#frontpg-nav-header a,
+    nav#frontpg-nav-header li {
+        padding: 10px 16px;
+        font-size: 18pt;
+    }
+}
+
+
+nav#nav-footer a:hover,
+nav#frontpg-nav-header a:hover {
+    /* background-color: #50505080; */
+    text-decoration: underline;
+}
+
+#nav-desktop-footer ul, #nav-desktop-footer li,
+#nav-desktop-header ul, #nav-desktop-header li {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+}
+
+div#logo-header-mobile {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#logo-header-mobile picture,
+div#logo-header-mobile picture img {
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: #C4C4C4; 
+    border-left: 1px solid #C4C4C4; 
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 5%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    padding: 8px 1em;
+    text-decoration: none;
+    color:#000000!important;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    background-color:  #F4F4F4;
+    color:#000000!important;
+}
+
+.icon {
+    color: #000000;
+    border-radius: 50%;
+    padding: 0.4em 0.7em;
+    display: flex;
+    justify-content: center;
+}
+
+.closebtn {
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+
+/* Position the buttons (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    /* top: 20px;
+    right: 75px; */
+    font-size: 2em!important;
+}
