@@ -26,10 +26,12 @@
                 </form>
         </div>
         <div id="col-2">
-            <div id="logo-footer">
-                <picture>
-                    <img src="img/logo.png" alt="Fångamon Cabin Resort">
-                </picture>
+            <?php
+                if ( function_exists( 'the_custom_logo' ) ) { ?>
+                <div id="logo-footer">
+                    <picture>
+                    <?php the_custom_logo(); } ?>
+                    </picture>
             </div>
         </div>
         <div id="col-3">

@@ -63,26 +63,88 @@ $args = array(
 );
 
 add_theme_support('custom-header', $args);
-// function hero_custom_header_setup() {
-//     $args = array(
-//         'width' => 1400,
-//         'height' => 720,
-//         'header-text' => true,
-//         'default-image' => get_template_directory_uri(); . '/img/hero.jpg',
-//         'uploads' => true
-//     );
-// }
-// add_action ( 'after_setup_theme', 'hero_custom_header_setup' );
 
 // featured images in posts
 add_theme_support( 'post-thumbnails' );
 
 // custom picture sizes
+add_image_size('small', 280, 170, array('center', 'center'));
 add_image_size('about', 380, 250, array('center', 'center'));
 add_image_size('regular', 350, 225, array('center', 'center'));
+add_image_size('pic_gallery', 480, 320, array('center', 'center'));
 add_image_size('blog', 950, 400, array('center', 'center'));
+add_image_size('hero', 1840, 900, array('center', 'center'));
 
+
+// Adding custom JS
+function ti_custom_javascript() {
+    ?>
+        <script>
+            /* Hamburger Menu */
+            /* Open when someone clicks on the span element */
+            function openNav() {
+                document.getElementById("myNav").style.width = "50%";
+            }
+            
+            /* Close when someone clicks on the "x" symbol inside the overlay */
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+    <?php
+}
+add_action('wp_head', 'ti_custom_javascript');
+
+
+// WIDGETS-------------------------------------------------
 // activate Widgits area
+
+// Frontpage widgets
+// add_action('widgets_init', 'title');
+add_action('widgets_init', 'front_pg_column1');
+add_action('widgets_init', 'front_pg_column2');
+add_action('widgets_init', 'front_pg_column3');
+add_action('widgets_init', 'front_pg_gallery');
+// add_action('widgets_init', 'hosts');
+
+function front_pg_column1() {
+    register_sidebar(array(
+        'name'          => 'The Cottages Widget',
+        'id'            => 'front_pg_column1',
+        'before_sidebar' => '<article class="card">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function front_pg_column2() {
+    register_sidebar(array(
+        'name'          => 'The Restaurant Widget',
+        'id'            => 'front_pg_column2',
+        'before_sidebar' => '<article class="card">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function front_pg_column3() {
+    register_sidebar(array(
+        'name'          => 'The Activities Widget',
+        'id'            => 'front_pg_column3',
+        'before_sidebar' => '<article class="card">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function front_pg_gallery() {
+    register_sidebar(array(
+        'name'          => 'Picture Gallery',
+        'id'            => 'front_pg_gallery',
+        'before_sidebar' => '<section id="picture-gallery"><h2 class="dont-show">Picture Gallery</h2>',
+        'after_sidebar'  => '</section>'
+
+    ));
+}
+
+//footer wigets
 add_action('widgets_init', 'column_1_init');
 add_action('widgets_init', 'column_2_init');
 add_action('widgets_init', 'column_3_init');
@@ -119,37 +181,40 @@ function column_3_init() {
 
  /*-------------------------- Custom Widgets --------------------------*/
 
+// gallery widget: altered actual gallery widget wordpress file.
 
- // Title Widget
-class wpb_widget extends WP_Widget {
+// Company Info Widget
+class card_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
 
         // Base ID of your widget
-        'wpb_widget',
+        'card_widget',
 
         // Widget name will appear in UI
-        __('Skogs Widget Title', 'wpb_widget_domain'),
+        __('Card', 'card_widget_domain'),
 
         // Widget description
-        array( 'description' => __( 'creates a formatted title for widget area', 'wpb_widget_domain' ), )
+        array( 'description' => __( 'creates a card with info', 'card_widget_domain' ), )
         );
     }
 
     // Creating widget front-end
     public function widget( $args, $instance ) {
-        // var_dump( $args);
-        $title = apply_filters( 'widget_title', $instance['title'] );
+        // var_dump( $instance);
+        $title = $instance['title'];
+        $content = $instance['content'];
+        $sleeps = $instance['sleeps'];
+        $price = $instance['price'];
 
-        // before and after widget arguments are defined by themes
-        echo $args['before_widget'];
+        // echo $args['before_sidebar'];
         if ( ! empty( $title ) )
-            echo $args['before_title'] . $title . $args['after_title'];
-
-            // This is where you run the code and display the output
-            // echo __( 'Hello, World!', 'wpb_widget_domain' );
-            echo $args['after_widget'];
+            echo '<h3>' . $title . '</h3>';
+            echo '<p class="content">' . $content . '</p>';
+            if ( ! empty( $sleeps ) )
+                echo '<p class="content">' . $sleeps . '<br>' . $price . '</p>';
+        // echo $args['after_sidebar'];
     }
 
     // Widget Backend
@@ -158,156 +223,66 @@ class wpb_widget extends WP_Widget {
             $title = $instance[ 'title' ];
             }
         else {
-            $title = __( 'New title', 'wpb_widget_domain' );
+            $title = __( 'Title of New card', 'card_widget_domain' );
         }
-        // Widget admin form
+        if ( isset( $instance[ 'content' ] ) ) {
+            $content = $instance[ 'content' ];
+            }
+        if ( isset( $instance[ 'sleeps' ] ) ) {
+            $sleeps = $instance[ 'sleeps' ];
+            }
+        if ( isset( $instance[ 'price' ] ) ) {
+            $price = $instance[ 'price' ];
+            }
+
+    // Widget admin form
         ?>
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
-        <?php
+        <p>
+            <label for="<?php echo $this->get_field_id( 'date' ); ?>"><?php _e( 'Content:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" type="text" value="<?php echo esc_attr( $content ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'sleeps' ); ?>"><?php _e( 'Sleeps:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'sleeps' ); ?>" name="<?php echo $this->get_field_name( 'sleeps' ); ?>" type="text" value="<?php echo esc_attr( $sleeps ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'price' ); ?>"><?php _e( 'Price:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'price' ); ?>" name="<?php echo $this->get_field_name( 'price' ); ?>" type="text" value="<?php echo esc_attr( $price ); ?>" />
+        </p>
+
+         <?php
     }
 
     // Updating widget replacing old instances with new
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+        $instance['sleeps'] = ( ! empty( $new_instance['sleeps'] ) ) ? strip_tags( $new_instance['sleeps'] ) : '';
+        $instance['price'] = ( ! empty( $new_instance['price'] ) ) ? strip_tags( $new_instance['price'] ) : '';
+
         return $instance;
     }
 
-    // Class wpb_widget ends here
-}
 
-// Company Info Widget
-class companyInfo_widget extends WP_Widget {
-
-    function __construct() {
-        parent::__construct(
-
-        // Base ID of your widget
-        'companyInfo_widget',
-
-        // Widget name will appear in UI
-        __('Skogs Company Info', 'companyInfo_widget_domain'),
-
-        // Widget description
-        array( 'description' => __( 'creates footer area with contact info', 'companyInfo_widget_domain' ), )
-        );
-    }
-
-    // Creating widget front-end
-    public function widget( $args, $instance ) {
-        // var_dump( $instance);
-        $title1 = $instance['header_line1'];
-        $title2 = $instance['header_line2'];
-        $content = $instance['comp_name'] . '<br>' . $instance['address1'] . '<br>' . $instance['address2'] . '<br> Telefon: ' . $instance['telephone'];
-        echo $args['before_sidebar'];
-        if ( ! empty( $title1 ) )
-            echo '<h2>' . $title1 . '</h2>';
-            echo '<h2 class="push-left">' . $title2 . '</h2>';
-            echo '<p class="push-left">' . $content . '</p>';
-            echo $args['after_sidebar'];
-    }
-
-    // Widget Backend
-    public function form( $instance ) {
-        if ( isset( $instance[ 'header_line1' ] ) ) {
-            $title1 = $instance[ 'header_line1' ];
-            }
-        else {
-            $title1 = __( 'New title', 'companyInfo_widget_domain' );
-        }
-        if ( isset( $instance[ 'header_line2' ] ) ) {
-            $title2 = $instance[ 'header_line2' ];
-            }
-        if ( isset( $instance[ 'comp_name' ] ) ) {
-            $comp_name = $instance[ 'comp_name' ];
-            }
-        if ( isset( $instance[ 'address1' ] ) ) {
-            $address1 = $instance[ 'address1' ];
-            }
-        if ( isset( $instance[ 'address2' ] ) ) {
-            $address2 = $instance[ 'address2' ];
-            }
-        if ( isset( $instance[ 'telephone' ] ) ) {
-            $telephone = $instance[ 'telephone' ];
-            }
-
-
-
-
-        // Widget admin form
-        ?>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'header_line1' ); ?>"><?php _e( 'Title 1:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'header_line1' ); ?>" name="<?php echo $this->get_field_name( 'header_line1' ); ?>" type="text" value="<?php echo esc_attr( $title1 ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'header_line2' ); ?>"><?php _e( 'Title 2:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'header_line2' ); ?>" name="<?php echo $this->get_field_name( 'header_line2' ); ?>" type="text" value="<?php echo esc_attr( $title2 ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'comp_name' ); ?>"><?php _e( 'Full Company Name:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'comp_name' ); ?>" name="<?php echo $this->get_field_name( 'comp_name' ); ?>" type="text" value="<?php echo esc_attr( $comp_name ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'address1' ); ?>"><?php _e( 'Address Line 1:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'address1' ); ?>" name="<?php echo $this->get_field_name( 'address1' ); ?>" type="text" value="<?php echo esc_attr( $address1 ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'address2' ); ?>"><?php _e( 'Address Line 2 (Postal Code & City):' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'address2' ); ?>" name="<?php echo $this->get_field_name( 'address2' ); ?>" type="text" value="<?php echo esc_attr( $address2 ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'telephone' ); ?>"><?php _e( 'Telephone:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'telephone' ); ?>" name="<?php echo $this->get_field_name( 'telephone' ); ?>" type="text" value="<?php echo esc_attr( $telephone); ?>" />
-        </p>
-        <?php
-    }
-
-    // Updating widget replacing old instances with new
-    public function update( $new_instance, $old_instance ) {
-        $instance = array();
-        $instance['header_line1'] = ( ! empty( $new_instance['header_line1'] ) ) ? strip_tags( $new_instance['header_line1'] ) : '';
-        $instance['header_line2'] = ( ! empty( $new_instance['header_line2'] ) ) ? strip_tags( $new_instance['header_line2'] ) : '';
-        $instance['comp_name'] = ( ! empty( $new_instance['comp_name'] ) ) ? strip_tags( $new_instance['comp_name'] ) : '';
-        $instance['address1'] = ( ! empty( $new_instance['address1'] ) ) ? strip_tags( $new_instance['address1'] ) : '';
-        $instance['address2'] = ( ! empty( $new_instance['address2'] ) ) ? strip_tags( $new_instance['address2'] ) : '';
-        $instance['telephone'] = ( ! empty( $new_instance['telephone'] ) ) ? strip_tags( $new_instance['telephone'] ) : '';
-        return $instance;
-    }
-
-    // Class companyInfo_widget ends here
+    // Class card_widget ends here
 }
 
 
 // Register and load the widgets
 function wpb_load_widget() {
-    register_widget( 'wpb_widget' );
-    register_widget( 'companyInfo_widget' );
+    register_widget( 'card_widget' );
 }
 add_action( 'widgets_init', 'wpb_load_widget' );
 
 
-// Adding custom JS
-function ti_custom_javascript() {
-    ?>
-        <script>
-            /* Hamburger Menu */
-            /* Open when someone clicks on the span element */
-            function openNav() {
-                document.getElementById("myNav").style.width = "40%";
-            }
-            
-            /* Close when someone clicks on the "x" symbol inside the overlay */
-            function closeNav() {
-                document.getElementById("myNav").style.width = "0%";
-            }
 
-        </script>
-    <?php
-}
-add_action('wp_head', 'ti_custom_javascript');
+
+
+
 
 
