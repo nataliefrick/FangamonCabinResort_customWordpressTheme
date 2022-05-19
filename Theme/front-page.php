@@ -7,7 +7,7 @@
 * @since Fångamon 1.0
 */
 
-if(is_page_template( string|string[] $template = 'front-page' )) {
+if(is_page_template( 'front-page' )) {
  get_header('front');
 }
 else {
@@ -40,7 +40,7 @@ else {
             <?php if(have_posts()) : while(have_posts()) : the_post(); 
                 the_content();
                 if ( has_post_thumbnail() ) { ?>
-                    <picture><?php the_post_thumbnail( 'about' ); ?></picture> 
+                    <picture><?php the_post_thumbnail( 'medium-size' ); ?></picture> 
                 <?php }  
                 endwhile;
             endif ?>

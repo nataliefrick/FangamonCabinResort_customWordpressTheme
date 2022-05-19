@@ -45,11 +45,11 @@
             </ul>
             <!-- Mobile Navbar Small Screen -->
             <div class="hide-onDesktop">
+            <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
                 <div id="logo-header-mobile">
                     <picture>
-                        <img src="<?= get_template_directory_uri();?>/img/logo.png" alt="Fångamon Cabin Resort">
+                        <?php the_custom_logo(); } ?>
                     </picture>
-                    
                 </div>
                 <!-- The overlay -->
                 <div id="myNav" class="overlay">
@@ -59,11 +59,7 @@
 
                     <!-- Overlay content -->
                     <div class="overlay-content">
-                    <a href="/cms project/cottages.php">Cottages</a>
-                    <a href="/cms project/restaurant.php">Restaurant</a>
-                    <a href="/cms project/activities.php">Activities</a>
-                    <a href="/cms project/blog.php">Whats New</a>
-                    <a href="/cms project/book.php">Book</a>
+                        <?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
                     </div>
                 </div>
 

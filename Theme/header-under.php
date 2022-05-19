@@ -17,14 +17,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon" />
-    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="icon" href="<?= get_template_directory_uri();?>/img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= get_template_directory_uri();?>/img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" href="<?= get_template_directory_uri();?>/img/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= get_template_directory_uri();?>/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri();?>/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri();?>/img/favicon/favicon-16x16.png">
     <?php wp_head(); ?>
     <title><?php bloginfo('name'); ?></title>
+
 </head>
 
 <body>
@@ -32,30 +33,28 @@
     <header id="under">
 
     <nav id="nav-header">
-    <!-- Desktop navbar -->
-    
+        <!-- Desktop navbar -->
         <ul id="nav-desktop-header" class="hide-onMobile-flex">
-            <li><a href="/cms project/index.php">Home</a></li>
-            <li><a href="/cms project/cottages.php">Cottages</a></li>
-            <li><a href="/cms project/restaurant.php">Restaurant</a></li>
-            <li id="logo-header">
+        <?php wp_nav_menu( array( 'theme_location' => 'header-menu-left' ) ); ?>
+        <?php
+        if ( function_exists( 'the_custom_logo' ) ) { ?>
+        <li id="logo-header">
             <picture>
-                <img src="img/logo.png" alt="Fångamon Cabin Resort">
+            <?php the_custom_logo(); } ?>
             </picture>
-            </li>
-            <li><a href="/cms project/activities.php">Activities</a></li>
-            <li><a href="/cms project/blog.php">News</a></li>
-            <li><a href="/cms project/book.php">Book</a></li>
-        </ul>
+        </li>
+        <?php wp_nav_menu( array( 'theme_location' => 'header-menu-right' ) ); ?>
+    </ul>
 
 
     <!-- Mobile Navbar Small Screen -->
     <div class="hide-onDesktop">
-        <div id="logo-header-mobile">
-            <picture>
-                <img src="img/logo.png" alt="Fångamon Cabin Resort">
-            </picture>
-        </div>
+        <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
+            <div id="logo-header-mobile">
+                <picture>
+                    <?php the_custom_logo(); } ?>
+                </picture>
+            </div>
         <!-- The overlay -->
         <div id="myNav" class="overlay">
 
@@ -64,12 +63,7 @@
 
             <!-- Overlay content -->
             <div class="overlay-content">
-            <li><a href="/index.php">Home</a></li>
-            <li><a href="/cms project/cottages.php">Cottages</a></li>
-            <li><a href="/cms project/restaurant.php">Restaurant</a></li>
-            <li><a href="/cms project/activities.php">Activities</a></li>
-            <li><a href="/cms project/blog.php">News</a></li>
-            <li><a href="/cms project/book.php">Book</a></li>
+                <?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
             </div>
         </div>
 

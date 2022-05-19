@@ -11,6 +11,7 @@ function register_my_menus() {
         // adds a menu location element
         'header-menu-left' => __('Header Menu-left'),
         'header-menu-right' => __('Header Menu-right'),
+        'mobile' => __('Mobile'),
         'footer-menu' => __('Footer Menu')
         )
     );
@@ -69,7 +70,7 @@ add_theme_support( 'post-thumbnails' );
 
 // custom picture sizes
 add_image_size('small', 280, 170, array('center', 'center'));
-add_image_size('about', 380, 250, array('center', 'center'));
+add_image_size('medium-size', 380, 250, array('center', 'center'));
 add_image_size('regular', 350, 225, array('center', 'center'));
 add_image_size('pic_gallery', 480, 320, array('center', 'center'));
 add_image_size('blog', 950, 400, array('center', 'center'));
@@ -105,11 +106,32 @@ add_action('widgets_init', 'front_pg_column1');
 add_action('widgets_init', 'front_pg_column2');
 add_action('widgets_init', 'front_pg_column3');
 add_action('widgets_init', 'front_pg_gallery');
+add_action('widgets_init', 'restaurant_widget_breakfast1_section');
+add_action('widgets_init', 'restaurant_widget_breakfast2_section');
+add_action('widgets_init', 'restaurant_widget_breakfast3_section');
+add_action('widgets_init', 'restaurant_widget_lunch1_section');
+add_action('widgets_init', 'restaurant_widget_lunch2_section');
+add_action('widgets_init', 'restaurant_widget_lunch3_section');
+add_action('widgets_init', 'restaurant_widget_dinner1_section');
+add_action('widgets_init', 'restaurant_widget_dinner2_section');
+add_action('widgets_init', 'restaurant_widget_dinner3_section');
+add_action('widgets_init', 'restaurant_widget_mobilegallery_section');
+add_action('widgets_init', 'cabin_widget_row1col1_section');
+add_action('widgets_init', 'cabin_widget_row1col2_section');
+add_action('widgets_init', 'cabin_widget_row1col3_section');
+add_action('widgets_init', 'cabin_widget_row2col1_section');
+add_action('widgets_init', 'cabin_widget_row2col2_section');
+add_action('widgets_init', 'cabin_widget_row2col3_section');
+add_action('widgets_init', 'cabin_widget_mobilegallery_section');
+add_action('widgets_init', 'column_1_init');
+add_action('widgets_init', 'column_2_init');
+add_action('widgets_init', 'column_3_init');
+
 // add_action('widgets_init', 'hosts');
 
 function front_pg_column1() {
     register_sidebar(array(
-        'name'          => 'The Cottages Widget',
+        'name'          => 'Front page: Cottages Widget',
         'id'            => 'front_pg_column1',
         'before_sidebar' => '<article class="card">',
         'after_sidebar'  => '</article>'
@@ -118,7 +140,7 @@ function front_pg_column1() {
 
 function front_pg_column2() {
     register_sidebar(array(
-        'name'          => 'The Restaurant Widget',
+        'name'          => 'Front page: Restaurant Widget',
         'id'            => 'front_pg_column2',
         'before_sidebar' => '<article class="card">',
         'after_sidebar'  => '</article>'
@@ -127,7 +149,7 @@ function front_pg_column2() {
 
 function front_pg_column3() {
     register_sidebar(array(
-        'name'          => 'The Activities Widget',
+        'name'          => 'Front page: Activities Widget',
         'id'            => 'front_pg_column3',
         'before_sidebar' => '<article class="card">',
         'after_sidebar'  => '</article>'
@@ -136,7 +158,7 @@ function front_pg_column3() {
 
 function front_pg_gallery() {
     register_sidebar(array(
-        'name'          => 'Picture Gallery',
+        'name'          => 'Front page: Picture Gallery',
         'id'            => 'front_pg_gallery',
         'before_sidebar' => '<section id="picture-gallery"><h2 class="dont-show">Picture Gallery</h2>',
         'after_sidebar'  => '</section>'
@@ -144,11 +166,168 @@ function front_pg_gallery() {
     ));
 }
 
-//footer wigets
-add_action('widgets_init', 'column_1_init');
-add_action('widgets_init', 'column_2_init');
-add_action('widgets_init', 'column_3_init');
+// Restaurant Page Widgets
+function restaurant_widget_breakfast1_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: breakfast col-1',
+        'id'            => 'restaurant_widget_breakfast1_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
 
+function restaurant_widget_breakfast2_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: breakfast col-2',
+        'id'            => 'restaurant_widget_breakfast2_section',
+        'before_sidebar' => '<article class="card card-desc">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_breakfast3_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: breakfast col-3',
+        'id'            => 'restaurant_widget_breakfast3_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_lunch1_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: Lunch col-1',
+        'id'            => 'restaurant_widget_lunch1_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_lunch2_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: lunch col-2',
+        'id'            => 'restaurant_widget_lunch2_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_lunch3_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: lunch col-3',
+        'id'            => 'restaurant_widget_lunch3_section',
+        'before_sidebar' => '<article class="card card-desc">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_dinner1_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: dinner col-1',
+        'id'            => 'restaurant_widget_dinner1_section',
+        'before_sidebar' => '<article class="card card-desc">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_dinner2_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: dinner col-2',
+        'id'            => 'restaurant_widget_dinner2_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_dinner3_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: dinner col-3',
+        'id'            => 'restaurant_widget_dinner3_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function restaurant_widget_mobilegallery_section() {
+    register_sidebar(array(
+        'name'          => 'Restaurant Page: mobile gallery',
+        'id'            => 'restaurant_widget_mobilegallery_section',
+        'before_sidebar' => '<section id="mobile-picture-gallery">
+    <h2 class="dont-show">Picture Gallery</h2>',
+        'after_sidebar'  => '</section>'
+    ));
+}
+
+
+// CABIN widgets ------------------------------------------------
+
+
+function cabin_widget_row1col1_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-1 col-1',
+        'id'            => 'cabin_widget_row1col1_section',
+        'before_sidebar' => '<article class="card card-desc">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function cabin_widget_row1col2_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-1 col-2',
+        'id'            => 'cabin_widget_row1col2_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function cabin_widget_row1col3_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-1 col-3',
+        'id'            => 'cabin_widget_row1col3_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function cabin_widget_row2col1_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-2 col-1',
+        'id'            => 'cabin_widget_row2col1_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function cabin_widget_row2col2_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-2 col-2',
+        'id'            => 'cabin_widget_row2col2_section',
+        'before_sidebar' => '<article class="card card-pic">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+function cabin_widget_row2col3_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: row-2 col-3',
+        'id'            => 'cabin_widget_row2col3_section',
+        'before_sidebar' => '<article class="card card-desc">',
+        'after_sidebar'  => '</article>'
+    ));
+}
+
+
+function cabin_widget_mobilegallery_section() {
+    register_sidebar(array(
+        'name'          => 'Cabin Page: mobile gallery',
+        'id'            => 'cabin_widget_mobilegallery_section',
+        'before_sidebar' => '<section id="mobile-picture-gallery">
+        <h2 class="dont-show">Picture Gallery</h2>',
+        'after_sidebar'  => '</section>'
+    ));
+}
+
+//footer wigets
 function column_1_init() {
     register_sidebar(array(
         'name'          => 'column_1',

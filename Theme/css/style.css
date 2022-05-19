@@ -162,13 +162,13 @@ header#index {
     }
 
     #description picture {
-        width: 140px;
-        height: 140px;
+        width: 100%;
+        height: auto;
     }
 
     #description picture img { 
-        width: 140px;
-        height: 140px;
+        width: 100%;
+        height: auto;
         object-fit: cover;
     }
 
@@ -445,7 +445,7 @@ div#logo-header-mobile picture img {
 .icon {
     color: #000000;
     border-radius: 50%;
-    padding: 0.4em 0.7em;
+    padding: 20px 0!important;
     display: flex;
     justify-content: center;
 }
@@ -693,7 +693,7 @@ section#copyright p {
 
 /* frontpage main */
 @media (max-width: 430px) {
-    #restaurant, #blog, #activities, #resort-sections, section#description, section#map, section#picture-gallery, section#your-hosts {
+    #cabins, #restaurant, #blog, #activities, #resort-sections, section#description, section#map, section#picture-gallery, section#your-hosts {
         margin-top: 10%;
         margin-bottom: 10%;
         padding-top: 10%!important;
@@ -709,6 +709,7 @@ section#copyright p {
         padding-bottom: 6%;
     }
 
+    #cabins article.card,
     #restaurant article.card,
     #blog article.card,
     #activities article.card,
@@ -717,6 +718,11 @@ section#copyright p {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
+    }
+
+    #cabins article.card-pic,
+    #restaurant article.card-pic {
+        display: none!important;
     }
 }
 
@@ -741,7 +747,6 @@ section#copyright p {
         gap: 2%;
     }
 
-    /* #restaurant article.card, */
     #blog article.card,
     #activities article.card,
     #resort-sections article.card {
@@ -752,8 +757,6 @@ section#copyright p {
         margin-right: auto;
     }
 
-    /* #restaurant article.restaurant-pic picture img,
-    #restaurant article.restaurant-desc picture img, */
     #blog article.card picture img,
     #activities article.card picture img,
     #resort-sections article.card picture img {
@@ -762,6 +765,7 @@ section#copyright p {
 }
 
 @media (min-width: 771px) { 
+    #cabins,
     #restaurant,
     #blog, 
     #activities, #resort-sections {
@@ -780,6 +784,7 @@ section#copyright p {
         margin-right: auto;
     }
   
+    #cabins article.card,
     #restaurant article.card,
     #blog article.card,
     #activities article.card,
@@ -787,8 +792,10 @@ section#copyright p {
         width: 280px;
     }
 
-    #restaurant article.restaurant-pic picture img,
-    #restaurant article.restaurant-desc picture img,
+    #cabins article.card-pic picture img,
+    #cabins article.card-desc picture img,
+    #restaurant article.card-pic picture img,
+    #restaurant article.card-desc picture img,
     #blog article.card picture img,
     #activities article.card picture img,
     #resort-sections article.card picture img {
@@ -796,6 +803,7 @@ section#copyright p {
     }
 }
 
+#cabins article.card,
 #restaurant article.card,
 #blog article.card,
 #activities article.card,
@@ -805,7 +813,8 @@ section#copyright p {
     flex-direction: column;
 }
 
-#restaurant article.restaurant-desc picture img,
+#cabins article.card-desc picture img,
+#restaurant article.card-desc picture img,
 #blog article.card picture img,
 #activities article.card picture img,
 #resort-sections article.card picture img {
@@ -815,6 +824,7 @@ section#copyright p {
     object-position: center bottom;
 }
 
+#cabins article.card div.content,
 #restaurant article.card div.content,
 #blog article.card div.content,
 #activities article.card div.content,
@@ -886,9 +896,10 @@ section#picture-gallery {
     gap: 16px;
 }
 
-section#picture-gallery figure.wp-block-gallery figure.wp-block-image:not(#individual-image) img,
+#mobile-picture-gallery figure.wp-block-gallery figure.wp-block-image:not(#individual-image) img, section#picture-gallery figure.wp-block-gallery figure.wp-block-image:not(#individual-image) img,
+#mobile-picture-gallery figure img,
 section#picture-gallery figure img {
-    width: 175px!important;
+    width: auto!important; /* 175px */
     height: 266px!important;
     object-fit: cover;
 }
@@ -1119,7 +1130,7 @@ nav#nav-header {
 }
 
 .title-subpage {
-    padding-top: 2%;
+    padding-top: 4%;
     padding-bottom: 1%;
 }
 
@@ -1128,9 +1139,10 @@ nav#nav-header {
     #nav-desktop-footer,
     #nav-desktop-header {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         padding: 0;
+        gap: 0;
     }
 }
 
@@ -1152,6 +1164,17 @@ nav#nav-header li {
     padding: 4px;
     font-size: 16pt;
     }
+
+    nav#nav-header a,
+    nav#nav-header li {
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 100;
+        padding: 0px;
+        font-size: 24pt;
+    }
+
 }
 
 @media (min-width: 771px) and (max-width: 1025px) {
@@ -1170,7 +1193,7 @@ nav#nav-header li {
     nav#nav-header a,
     nav#nav-header li {
         padding: 10px 16px;
-        font-size: 18pt;
+        /* font-size: 18pt; */
     }
 }
 
@@ -1187,12 +1210,6 @@ nav#nav-header a:hover {
     display: inline-block;
 }
 
-
-/*
-nav#nav-header
-ul#nav-desktop-header
-li a  */
-
 #logo-header picture,
 li#logo-header picture img {
     width: 100px;
@@ -1206,15 +1223,29 @@ div.container {
     max-width: 1024px;
 }
 
-.restaurant-pic,
-.restaurant-desc,
+.card-pic,
+.card-desc,
 .blog,
 .activity {
     height: 450px;
 }
 
-/* Restaurant Section */
+.card-pic .wp-block-image img {
+    height: 450px;
+    width: 280px;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.card-desc .wp-block-image img {
+    height: 156px;
+    /* width: 280px; */
+    object-fit: cover;
+}
+
+/* Restaurant & Cabin Section */
 /* #restaurant */
+#cabins div.row,
 #restaurant div.row {
     display: flex;
     flex-direction: row;
@@ -1227,7 +1258,7 @@ div.container {
 
 
 @media (min-width: 771px) {
-    .restaurant-pic picture img {
+    .card-pic picture img {
         height: 450px;
         object-fit: cover;
     }
@@ -1238,32 +1269,41 @@ div.container {
 }
 
 @media (max-width: 770px) {
+    section#cabins {
+        padding-top: 25px;
+    }
 
+    #cabins div.row,
     #restaurant div.row {
         width: 100%;
         flex-direction: column;
         justify-content: center;
         gap: 5px;
+        margin-bottom: 25px;
     }
 
-    .restaurant-pic {
-        display: none;
+    #cabins article.card-pic,
+    #restaurant article.card-pic,
+    .card-pic {
+        display: none!important;
         width: 0;
         height: 0;
         order: 2;
     }
 
-    .restaurant-pic picture img {
+    #cabins article.card-pic,
+    #restaurant article.card-pic,
+    .card-pic picture img {
         display: none;
     }
 
-    .restaurant-desc {
+    .card-desc {
         width: 60%;
         margin: 0 auto;
         order: 1;
     }
 
-    .restaurant-desc picture img {
+    .card-desc picture img {
         height: 240px!important;
     }
 
@@ -1278,7 +1318,7 @@ div.container {
     }
 
     #mobile-picture-gallery picture img {
-        width: 175px;
+        width: auto; /* 175px */
         height: 266px;
         object-fit: cover;
     }
@@ -1634,8 +1674,20 @@ code,
     text-transform: uppercase;
 }
 
+button.read-more {
+    background-color:#C4C4C4;
+    color: #000000;
+    font-family: 'Crimson Pro', serif; 
+    border: 0;
+    padding: 10px 16px;
+    text-transform: uppercase;
+}
 
-
+button.read-more:hover {
+    background-color: #8e8e8e;
+    color: #ffffff;
+    border: 0;
+}
 
 
 

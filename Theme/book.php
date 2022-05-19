@@ -1,16 +1,34 @@
-<?php 
-include("incl/header-underpg.php");  ?>
-<h1 class="title-subpage">Booking & Availability</h1>
+<?php
+/**
+* Template Name: Booking Page
+*
+* @package WordPress
+* @subpackage Fångamon Cabin Resort
+* @since Fångamon 1.0
+*/
+
+if(is_page_template( 'front-page' )) {
+ get_header('front');
+}
+else {
+    get_header('under');
+}
+ wp_head();
+?>
+<h1 class="title-subpage"><?php the_title();?></h1>
 <!-- Description of page/content -->
 <section id="description">
-    <h2 class="dont-show">Breakfast, lunch and dinner</h2>
-    <div>
-        <p>Here at <span class="big">FÅNGAMON LUXURY CABIN RESORT</span> we take pride in giving you, our guests, the ultimate experience. Use the form below to give us an idea of what you will be needing. Of course you can always add extras, like dinners, lunches and activities during your stay, but please note we do need 24 hours notice for any food orders. We will respond with availiabilty. If your desired cabin is not available on the requested dates we will let you know which dates are available.</p>
-        <picture>
-            <img src="img/logo.png" alt="logo">
-        </picture>
-    </div>
-</section>
+    <h2 class="dont-show">Booking & Availability</h2>
+        <div>
+            <?php if(have_posts()) : while(have_posts()) : the_post(); 
+                the_content();
+                if ( has_post_thumbnail() ) { ?>
+                    <picture><?php the_post_thumbnail( 'about' ); ?></picture> 
+                <?php }  
+                endwhile;
+            endif ?>
+        </div>
+    </section>
 
 <!-- Restaurant -->
 <section id="booking">
@@ -167,4 +185,4 @@ include("incl/header-underpg.php");  ?>
 
 </section>
 
-<?php include("incl/footer.php");  ?>
+<?php get_footer() ?>

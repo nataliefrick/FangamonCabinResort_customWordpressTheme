@@ -1,6 +1,21 @@
-<?php 
-include("incl/header-underpg.php");  ?>
-<h1 class="title-subpage">Whats happening at Camp</h1>
+<?php
+/**
+* Template Name: Blog Listing Page
+*
+* @package WordPress
+* @subpackage Fångamon Cabin Resort
+* @since Fångamon 1.0
+*/
+
+if(is_page_template( 'front-page' )) {
+ get_header('front');
+}
+else {
+    get_header('under');
+}
+ wp_head();
+?>
+<h1 class="title-subpage"><?php the_title();?></h1>
 <div class="seperator-line"></div>
 <!-- Title & Description Section -->
 <section class="title-subpage">
@@ -8,76 +23,30 @@ include("incl/header-underpg.php");  ?>
 </section>
 <!-- Blogroll -->
 <section id="blog">
-    <h2 class="dont-show">Here is a list of what is happening</h2>
-    
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article>
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article>
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article>
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article>
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article>
-        <article class="card blog">
-            <picture>
-                <img src="img/activity1.jpg" alt="activity">
-            </picture>
-            <div class="content">
-                <h3>The Cottages</h3>
-                <p class="publish-date">June 1, 2022</p>
-                <p>Each chalet is decked out with 5 star level quality you come to expect from a luxury hotel with the cosy atmosphere of fireplaces, hot chocolate and the forest views outside the windows.  </p>
-                <a class="read-more" href="#">Read More</a>
-            </div>
-        </article> 
+    <h2 class="dont-show">These are the activites we offer</h2>
+    <?php wp_reset_postdata();
+    query_posts('category_name=news');
+    if(have_posts()) {
+        while(have_posts()){
+            the_post();?>
+            <article  id="<?php the_ID(); ?>" class="card blog">
+                <picture> 
+                    <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'regular' ); } ?> 
+                </picture>
+                <div class="content">
+                    <h3><?php the_title(); ?></h3>
+                    <p class="publish-date"><?php the_date(); ?></p>
+                    <p><?php the_excerpt(); ?></p>
+                    <a href="<?= get_template_directory_uri();?><?php the_ID(); ?>"><button class="read-more">Read More</button></a>
+                </div>
+            </article>
+
+    <?php     
+        }
+      }
+      ?>
    
 </section>
 
 
-<?php include("incl/footer.php");  ?>
+<?php get_footer() ?>
