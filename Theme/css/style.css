@@ -197,6 +197,7 @@ section#hero {
 #hero_pic figure {
     width: 100%;
     margin: 0;
+    margin-top: -100px;
 }
 
 #heroimg {
@@ -655,17 +656,23 @@ section#copyright p {
 
 @media (min-width: 771px) {
     /* column 2 */
-    div#logo-footer {
+    section#footer div#col-2 li figure {
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* div#logo-footer {
         height: 220px;
         width: 220px;
     }
 
     div#logo-footer picture img {
         height: 220px;
-    }
+    } */
 
     div#col-1, div#col-2, div#col-3 {
-        width: 30%;
+        width: 100%;
         max-width: 300px;
     }
 
@@ -737,7 +744,7 @@ section#copyright p {
 }
 
 @media (min-width: 431px) and (max-width: 770px) {
-    #blog, #activities, #resort-sections {
+    #activities, #resort-sections {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -747,7 +754,21 @@ section#copyright p {
         gap: 2%;
     }
 
-    #blog article.card,
+    #blog {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        gap: 2%;
+    }
+
+    #blog article.card {
+        width: 280px;
+        margin-bottom: 3%;
+    }
     #activities article.card,
     #resort-sections article.card {
         /* width: 475px; */
@@ -1129,8 +1150,15 @@ nav#nav-header {
     padding: 5px 0;
 }
 
-.title-subpage {
+section.title-subpage p,
+section.title-subpage h3 {
     padding-top: 4%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+h1.title-subpage {
+    padding-top: 2%;
     padding-bottom: 1%;
 }
 
@@ -1591,40 +1619,57 @@ div.addons {
     margin-bottom: 30px;
 }
 
-/* single blogpost page */
-section#blogpost article {
-    width: 80%;
-    margin: 3% auto;
-    background-color: #ffffff;
+@media (min-width: 1000px) {
+    /* single blogpost page */
+    section#blogpost article {
+        width: 80%;
+        margin: 3% auto;
+        background-color: #ffffff;
+        
+    }
+
+    article.blogpost {
+        display: flex;
+        flex-direction: rows;
+    }
+
+    article.blogpost picture {
+        width: 360px;
+        height: inherit;
+    }
+
+    article.blogpost picture img {
+        width: 360px;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+@media (max-width: 999px) {
+    section#blogpost article {
+        width: 80%;
+        margin: 3% auto;
+        background-color: #ffffff;
+        
+    }
     
-}
-
-article.blogpost {
-    display: flex;
-    flex-direction: rows;
-}
-
-article.blogpost picture {
-    width: 360px;
-    height: 542px;
-    /* position: relative;
-    display: inline-block;
-    overflow: hidden;
-    margin: 0; */
-}
-
-article.blogpost picture img {
-    width: 360px;
-    height: 542px;
-    /* display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    transform: translate(-50%, -50%); */
-    object-fit: cover;
-    object-position: center center;
+    article.blogpost {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    article.blogpost picture {
+        width: 100%;
+        height: 360px;
+    }
+    
+    article.blogpost picture img {
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        object-position: center center;
+    }
 }
 
 article.blogpost div.content {
@@ -1663,6 +1708,8 @@ p.content {
     text-align: center;
 }
 
+/* .wp-block-buttons>.wp-block-button { */
+
 a.wp-block-button__link,
 code,
 .widget, .widget_block {
@@ -1670,8 +1717,21 @@ code,
     color: #000000;
     text-decoration: underline;
     margin: 0 auto;
+    margin-bottom: 3%;
     text-align: center;
     text-transform: uppercase;
+}
+
+div#col-2 .widget, .widget_block {
+    text-transform: none;
+    text-decoration: none;
+}
+
+code:hover,
+.widget:hover,
+a.wp-block-button__link:hover,
+.widget_block:hover {
+    color: #8e8e8e;
 }
 
 button.read-more {
@@ -1690,8 +1750,7 @@ button.read-more:hover {
 }
 
 
-
-
+/* Pagination----------------------- */
 
 
 

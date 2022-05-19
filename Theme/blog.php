@@ -7,25 +7,21 @@
 * @since Fångamon 1.0
 */
 
-if(is_page_template( 'front-page' )) {
- get_header('front');
-}
-else {
-    get_header('under');
-}
- wp_head();
+get_header('under');
+wp_head();
+
 ?>
 <h1 class="title-subpage"><?php the_title();?></h1>
 <div class="seperator-line"></div>
 <!-- Title & Description Section -->
 <section class="title-subpage">
-    <h3>Read up on all the happenings!</h3>
+    <p>Read up on all the happenings!</p>
 </section>
 <!-- Blogroll -->
 <section id="blog">
     <h2 class="dont-show">These are the activites we offer</h2>
     <?php wp_reset_postdata();
-    query_posts('category_name=news');
+    query_posts('category_name=news&posts_per_page=6');
     if(have_posts()) {
         while(have_posts()){
             the_post();?>
@@ -37,7 +33,7 @@ else {
                     <h3><?php the_title(); ?></h3>
                     <p class="publish-date"><?php the_date(); ?></p>
                     <p><?php the_excerpt(); ?></p>
-                    <a href="<?= get_template_directory_uri();?><?php the_ID(); ?>"><button class="read-more">Read More</button></a>
+                    <a href="<?= the_permalink(); ?>"><button class="read-more">Read More</button></a>
                 </div>
             </article>
 

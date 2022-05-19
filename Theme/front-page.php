@@ -7,12 +7,8 @@
 * @since Fångamon 1.0
 */
 
-if(is_page_template( 'front-page' )) {
+
  get_header('front');
-}
-else {
-    get_header('under');
-}
  wp_head();
 ?>
 

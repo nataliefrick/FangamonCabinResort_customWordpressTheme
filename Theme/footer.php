@@ -12,44 +12,19 @@
 </nav>
         </section>
     <section id="footer">
-
-        <div id="col-1">
-            <h3>Contact Us!</h3>
-                <form action="">
-                    <label class="dont-show" for="name"></label>
-                    <input type="text" id="name" placeholder="NAME">
-                    <label class="dont-show" for="email"></label>
-                    <input type="email" id="email" placeholder="EMAIL">
-                    <label class="dont-show" for="message"></label>
-                    <textarea id="message" placeholder="MESSAGE" class="textarea"></textarea>
-                    <input class="submit" type="submit" value="SUBMIT">
-                </form>
-        </div>
-        <div id="col-2">
-            <?php
-                if ( function_exists( 'the_custom_logo' ) ) { ?>
-                <div id="logo-footer">
-                    <picture>
-                    <?php the_custom_logo(); } ?>
-                    </picture>
-            </div>
-        </div>
-        <div id="col-3">
-            <div id="company-info">
-                <p><span class="big">FÅNGAMON LUXURY CABIN RESORT</span></p>
-                <hr>
-                <ul>
-                    <li>Natasha & Erik Gustavsson</li>
-                    <li>Fångamon 510</li>
-                    <li>123 45 Undersåker</li>
-                    <li>070 12 34 56</li>
-                    <li>hello@fangamoncabins.se</li>
-                </ul>
-            </div>
-        </div>
+        <?php if(is_active_sidebar('footer_column_1_init')) : ?>
+            <?php dynamic_sidebar('footer_column_1_init'); ?>
+        <?php endif ?>
+        <?php if(is_active_sidebar('footer_column_2_init')) : ?>
+            <?php dynamic_sidebar('footer_column_2_init'); ?>
+        <?php endif ?>
+        <?php if(is_active_sidebar('footer_column_3_init')) : ?>
+            <?php dynamic_sidebar('footer_column_3_init'); ?>
+        <?php endif ?>
+        
     </section>
     <section id="copyright">
-        <p>&copy; Fångamon Luxury Cabin Resorts 2022</p>
+        <p>&copy; <?php bloginfo('name'); ?> <?php echo get_the_date( 'Y' ); ?></p>
     </section>
 </footer>
     

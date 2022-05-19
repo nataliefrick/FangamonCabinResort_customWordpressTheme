@@ -7,13 +7,9 @@
 * @since Fångamon 1.0
 */
 
-if(is_page_template( 'front-page' )) {
- get_header('front');
-}
-else {
-    get_header('under');
-}
- wp_head();
+get_header('under');
+wp_head();
+
 ?>
 <h1 class="title-subpage"><?php the_title();?></h1>
 <!-- Description of page/content -->
