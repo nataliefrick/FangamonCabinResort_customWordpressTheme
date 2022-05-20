@@ -114,6 +114,7 @@ add_action('widgets_init', 'cabin_widget_row2col1_section');
 add_action('widgets_init', 'cabin_widget_row2col2_section');
 add_action('widgets_init', 'cabin_widget_row2col3_section');
 add_action('widgets_init', 'cabin_widget_mobilegallery_section');
+add_action('widgets_init', 'booking_form_widget_section');
 add_action('widgets_init', 'footer_column_1_init');
 add_action('widgets_init', 'footer_column_2_init');
 add_action('widgets_init', 'footer_column_3_init');
@@ -339,6 +340,17 @@ function cabin_widget_mobilegallery_section() {
     ));
 }
 
+
+
+//Booking and Availability widget---------------------------------------------------
+function booking_form_widget_section() {
+    register_sidebar(array(
+        'name'          => 'Booking Page: form',
+        'id'            => 'booking_form_widget_section',
+        'before_sidebar' => '<section id="booking">',
+        'after_sidebar'  => '</section>'
+    ));
+}
 
 
 //footer widgets areas---------------------------------------------------------------
@@ -714,7 +726,7 @@ class host_section_widget extends WP_Widget {
             echo '<h2 class="full-width">' . $title . '</h2>';
         echo $p;
         if($image1): ?>
-            <img class="pic2" src="<?php echo esc_url($image1); ?>" alt="">
+            <img id="image_upload_preview" class="pic2" src="<?php echo esc_url($image1); ?>" alt="">
         <?php endif;
         echo '</div>';
         if($image1): ?>
@@ -784,12 +796,14 @@ class host_section_widget extends WP_Widget {
         return $instance;
     }
 
+    // Calling scripts to upload media
     public function scripts()
         {
         wp_enqueue_script( 'media-upload' );
         wp_enqueue_media();
         wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
-        }
+    }
+    
     // Class title_widget ends here
 }
 

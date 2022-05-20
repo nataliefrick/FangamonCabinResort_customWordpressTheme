@@ -1,3 +1,7 @@
+// Thanks to 
+// https://vedmant.com/using-wordpress-media-library-in-widgets-options/
+// for the tutorial!
+
 jQuery(document).ready(function ($) {
     $(document).on("click", ".upload_image_button", function (e) {
         e.preventDefault();
@@ -31,3 +35,4 @@ jQuery(document).ready(function ($) {
         file_frame.open();
     });
 });
+

@@ -505,6 +505,12 @@ div#col-1 form {
     justify-content: flex-start;
 }
 
+
+div.field span textarea {
+    height: 60px;
+}
+
+div.field span textarea,
 textarea#message, input {
     width: 98%; /*300px*/
     background-color: #ffffff50;
@@ -517,10 +523,12 @@ textarea#message, input {
     line-height: 20pt;
 }
 
+div.field input.submit,
 input.submit {
     width: 100px;
     margin-left: auto;
     margin-right: 4px;
+    float: right;
 }
 
 input.submit:hover {
@@ -665,15 +673,6 @@ section#copyright p {
         height: auto;
         margin: 0 auto;
     }
-
-    /* div#logo-footer {
-        height: 220px;
-        width: 220px;
-    }
-
-    div#logo-footer picture img {
-        height: 220px;
-    } */
 
     div#col-1, div#col-2, div#col-3 {
         width: 100%;
@@ -1403,6 +1402,14 @@ section#booking form div.row {
     align-items: flex-start;
     
 }
+
+span.wpcf7-form-control.wpcf7-check-box {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    background-color: transparent;
+}
+
 @media (min-width: 1051px) {
     section#booking form div.activities,
     section#booking form div.row {
@@ -1517,6 +1524,7 @@ textarea#booking-message {
     line-height: 20pt;
 }
 
+
 select.grey {
     background-color: #E8E8E8;
     color: #7f7f7f;
@@ -1630,7 +1638,7 @@ div.flex-row {
 }
 
 div.addons {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 @media (min-width: 1000px) {
@@ -1762,6 +1770,10 @@ button.read-more:hover {
     color: #ffffff;
     border: 0;
 }
+
+
+
+
 
 
 /* Pagination----------------------- */
