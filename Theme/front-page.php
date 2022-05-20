@@ -58,37 +58,31 @@
     </section>
 
 <!-- Location section -->
-    <section id="map">
-        <article class="content">
-            <h2>Where are we located?</h2>
-            <p class="two-columns">
-                We are located in beautiful Åre Southern Mountain range (Södra Årefjällen), which lies just southwest of Undersåker and due south of Åre. Nearby we have the ski resorts of Trillevallen, Edsåsdalen and of course Åre, just 30 km away. To the south of us we have Vålådalens elite cross country skiing training center which is open to the public. <br>
-                <span class="gps">   GPS 63°10'60.0"N, 13°07'06.4"E     or   63.2200726, 13.5735197,9.37</span>
-            </p>
-            <img src="<?= get_template_directory_uri();?>/img/map.jpg" alt="map of location">
-        </article>
-    </section>
 
-    <!-- Picture Gallery section --> 
+    <?php if(is_active_sidebar('map_section')) : ?>
+        <?php dynamic_sidebar('map_section'); ?>
+    <?php endif ?>
+
+
+<!-- Picture Gallery section --> 
     <?php if(is_active_sidebar('front_pg_gallery')) : ?>
         <?php dynamic_sidebar('front_pg_gallery'); ?>
     <?php endif ?>
     
- 
-        <!-- <picture>
-            <img src="/img/details1.jpg" alt="resort details">
-        </picture> -->
-
 <!-- Hosts section -->
-    <section id="your-hosts">
-        <h2 class="dont-show">Your hosts: </h2>
+    <?php if(is_active_sidebar('host_section')) : ?>
+        <?php dynamic_sidebar('host_section'); ?>
+    <?php endif ?>
+
+    <!-- <section id="your-hosts"> -->
+        <!-- <h2 class="dont-show">Your hosts: </h2>
         <div>
             <p><span class="big">FÅNGAMON LUXURY CABIN RESORT</span> is a luxury resort located in the forests of Jämtland. Our aim is to provide a luxury get-away with maximal exposure to our beautiful nature.<br><br><span class="script">Welcome to our world!</span><br>
             We are your hosts, Natasha and Erik.</p>
 
             <img class="pic2" src="<?= get_template_directory_uri();?>/img/owners.jpg" alt="a closeup of the owners">
         </div>
-        <img class="pic1" src="<?= get_template_directory_uri();?>/img/hosts.jpg" alt="a photo of the hosts">
-    </section>
+        <img class="pic1" src="<?= get_template_directory_uri();?>/img/hosts.jpg" alt="a photo of the hosts"> -->
+    <!-- </section> -->
 
     <?php get_footer() ?>

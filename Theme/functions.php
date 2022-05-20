@@ -74,6 +74,7 @@ function ti_custom_javascript() {
             function closeNav() {
                 document.getElementById("myNav").style.width = "0%";
             }
+ 
         </script>
     <?php
 }
@@ -94,6 +95,8 @@ add_action('widgets_init', 'front_pg_column1');
 add_action('widgets_init', 'front_pg_column2');
 add_action('widgets_init', 'front_pg_column3');
 add_action('widgets_init', 'front_pg_gallery');
+add_action('widgets_init', 'map_section');
+add_action('widgets_init', 'host_section');
 add_action('widgets_init', 'restaurant_widget_breakfast1_section');
 add_action('widgets_init', 'restaurant_widget_breakfast2_section');
 add_action('widgets_init', 'restaurant_widget_breakfast3_section');
@@ -117,6 +120,7 @@ add_action('widgets_init', 'footer_column_3_init');
 
 // add_action('widgets_init', 'hosts');
 
+// Fontpage widget areas ---------------------------------------------------
 function front_pg_column1() {
     register_sidebar(array(
         'name'          => 'Front page: Cottages Widget',
@@ -154,7 +158,27 @@ function front_pg_gallery() {
     ));
 }
 
-// Restaurant Page Widgets
+function map_section() {
+    register_sidebar(array(
+        'name'          => 'Front page: Map Section',
+        'id'            => 'map_section',
+        'before_title'  => '<h2>',
+        'after_title'  => '</h2>',
+        'before_sidebar' => '<section id="map"><article class="content">',
+        'after_sidebar'  => '</article></section>'
+    ));
+}
+
+function host_section() {
+    register_sidebar(array(
+        'name'          => 'Front page: Host Section',
+        'id'            => 'host_section',
+        'before_sidebar' => '<section id="your-hosts">',
+        'after_sidebar'  => '</section>'
+    ));
+}
+
+// Restaurant Page Widgets areas--------------------------------------------
 function restaurant_widget_breakfast1_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: breakfast col-1',
@@ -247,7 +271,7 @@ function restaurant_widget_mobilegallery_section() {
 }
 
 
-// CABIN widgets ------------------------------------------------
+// CABIN widgets areas ------------------------------------------------
 
 
 function cabin_widget_row1col1_section() {
@@ -315,7 +339,9 @@ function cabin_widget_mobilegallery_section() {
     ));
 }
 
-//footer wigets
+
+
+//footer widgets areas---------------------------------------------------------------
 function footer_column_1_init() {
     register_sidebar(array(
         'name'          => 'Footer: column_1',
@@ -446,35 +472,57 @@ class card_widget extends WP_Widget {
 }
 
 // Title Widget
-class title_widget extends WP_Widget {
+class map_section_widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
 
         // Base ID of your widget
-        'title_widget',
+        'map_secion_widget',
 
         // Widget name will appear in UI
-        __('Widget Title', 'title_widget_domain'),
+        __('Map', 'map_section_widget_domain'),
 
         // Widget description
-        array( 'description' => __( 'creates a formatted title for widget area', 'title_widget_domain' ), )
+        array( 'description' => __( 'creates a formatted title for widget area', 'map_secion_widget_domain' ), )
         );
     }
 
     // Creating widget front-end
     public function widget( $args, $instance ) {
         // var_dump( $args);
-        $title = apply_filters( 'widget_title', $instance['title'] );
+        $or = '';
+        $gps_coord_LL = '';
+        // $gps_coord_d = '';
 
-        // before and after widget arguments are defined by themes
-        echo $args['before_widget'];
+        // if( ! empty($instance['gps_coord_LL']) )
+        //     $gps_coord_LL = $instance['gps_coord_LL'];
+        
+        $gps_coord_LL = ! empty( $instance['gps_coord_LL'] ) ? $instance['gps_coord_LL'] : '';
+
+        if( ! empty($instance['gps_coord_d']) )
+            $gps_coord_d = $instance['gps_coord_d'];
+
+        if( ! empty($gps_coord_LL) ) 
+            if( ! empty($gps_coord_d) )
+                $or = ' or ';
+            
+        $title = $instance['title'];
+        $text = $instance['content'];
+        $map = $instance['map'];
+
+        $gps = '<span class="gps"> GPS: ' . $gps_coord_LL . $or .  $gps_coord_d . ' </span></p>';
+        $content = '<p class="two-columns">' . $text . '<br>' . $gps;
+        $map_link = '<div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="' . $map . '"></iframe></div></div>';
+
+        // echo $args['before_sidebar'];
         if ( ! empty( $title ) )
-            echo $args['before_title'] . $title . $args['after_title'];
-
-            // This is where you run the code and display the output
-            // echo __( 'Hello, World!', 'wpb_widget_domain' );
-            echo $args['after_widget'];
+            echo $args['before_title'];
+            echo '<h2>' . $title . '</h2>';
+            echo $args['after_title'];
+        echo $content;
+        echo $map_link;
+        // echo $args['after_sidebar'];
     }
 
     // Widget Backend
@@ -491,6 +539,23 @@ class title_widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e( 'Content:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" type="text" value="<?php echo esc_attr( $content ); ?>" />
+        </p>
+        <p> 
+            <label for="<?php echo $this->get_field_id( 'gps_coord_LL' ); ?>"><?php _e( 'GPS coord. Long&Lat:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'gps_coord_LL' ); ?>" name="<?php echo $this->get_field_name( 'gps_coord_LL' ); ?>" type="text" value="<?php echo esc_attr( $gps_coord_LL ); ?>" />
+        </p>
+        <p> 
+            <label for="<?php echo $this->get_field_id( 'gps_coord_d' ); ?>"><?php _e( 'GPS coord. decimal:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'gps_coord_d' ); ?>" name="<?php echo $this->get_field_name( 'gps_coord_d' ); ?>" type="text" value="<?php echo esc_attr( $gps_coord_d ); ?>" />
+        </p>
+        <p> 
+            <label for="<?php echo $this->get_field_id( 'map' ); ?>"><?php _e( 'Map Embed Link (get from <a href="https://google-map-generator.com/" target="_blank">https://google-map-generator.com/</a>:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'map' ); ?>" name="<?php echo $this->get_field_name( 'map' ); ?>" type="text" value="<?php echo esc_attr( $map ); ?>" />
+        </p>
+
         <?php
     }
 
@@ -498,6 +563,11 @@ class title_widget extends WP_Widget {
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+        $instance['gps_coord_LL'] = ( ! empty( $new_instance['gps_coord_LL'] ) ) ? strip_tags( $new_instance['gps_coord_LL'] ) : '';
+        $instance['gps_coord_d'] = ( ! empty( $new_instance['gps_coord_d'] ) ) ? strip_tags( $new_instance['gps_coord_d'] ) : '';
+        $map = $instance['map'] = ( ! empty( $new_instance['map'] ) ) ? strip_tags( $new_instance['map'] ) : '';
+
         return $instance;
     }
 
@@ -605,12 +675,118 @@ class companyInfo_widget extends WP_Widget {
     // Class companyInfo_widget ends here
 }
 
+// Host Widget
+class host_section_widget extends WP_Widget {
+
+    function __construct() {
+        // Add Widget scripts
+        add_action('admin_enqueue_scripts', array($this, 'scripts'));
+
+        parent::__construct(
+            // Base ID of your widget
+            'host_secion_widget',
+
+            // Widget name will appear in UI
+            __('Host Section', 'host_section_widget_domain'),
+
+            // Widget description
+            array( 'description' => __( 'creates a formatted host for widget area', 'host_secion_widget_domain' ), )
+            );
+    }
+
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        // var_dump( $args);
+                    
+        $title = $instance['title'];
+        $big = $instance['big'];
+        $script = $instance['script'];
+        $content = $instance['content'];
+        $hosts = $instance['hosts'];
+        $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+
+        $p = '<div><p><span class="big">' . $big . '</span>' . $content . '<br><br><span class="script">' . $script . '</span><br>We are your hosts, ' . $hosts . '.</p>';
+
+
+        // echo $args['before_sidebar'];
+        if ( ! empty( $title ) )
+            echo '<h2 class="full-width">' . $title . '</h2>';
+        echo $p;
+        if($image): ?>
+            <img src="<?php echo esc_url($image); ?>" alt="">
+        <?php endif;
+            // echo $args['after_sidebar'];
+    }
+
+    // Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+            }
+        else {
+            $title = __( 'New title', 'wpb_widget_domain' );
+        }
+        $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'big' ); ?>"><?php _e( 'Bold Text:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'big' ); ?>" name="<?php echo $this->get_field_name( 'big' ); ?>" type="text" value="<?php echo esc_attr( $big ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'script' ); ?>"><?php _e( 'Script Text:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'script' ); ?>" name="<?php echo $this->get_field_name( 'script' ); ?>" type="text" value="<?php echo esc_attr( $script ); ?>" />
+        </p>
+        <p> 
+            <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e( 'Content:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" type="text" value="<?php echo esc_attr( $content ); ?>" />
+        </p>
+        <p> 
+            <label for="<?php echo $this->get_field_id( 'hosts' ); ?>"><?php _e( 'Hosts:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'hosts' ); ?>" name="<?php echo $this->get_field_name( 'hosts' ); ?>" type="text" value="<?php echo esc_attr( $hosts ); ?>" />
+        </p>
+        <p>
+      <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_url( $image ); ?>" />
+      <button class="upload_image_button button button-primary">Upload Image</button>
+   </p>
+        
+
+        <?php
+    }
+
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+        $instance['big'] = ( ! empty( $new_instance['big'] ) ) ? strip_tags( $new_instance['big'] ) : '';
+        $instance['script'] = ( ! empty( $new_instance['script'] ) ) ? strip_tags( $new_instance['script'] ) : '';
+        $instance['hosts'] = ( ! empty( $new_instance['hosts'] ) ) ? strip_tags( $new_instance['hosts'] ) : '';
+        $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? $new_instance['image'] : '';
+ 
+        return $instance;
+    }
+
+    public function scripts()
+        {
+        wp_enqueue_script( 'media-upload' );
+        wp_enqueue_media();
+        wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
+        }
+    // Class title_widget ends here
+}
 
 // Register and load the widgets
 function wpb_load_widget() {
     register_widget( 'card_widget' );
-    register_widget( 'title_widget' );
+    register_widget( 'map_section_widget' );
     register_widget( 'companyInfo_widget' );
+    register_widget( 'host_section_widget' );
 }
 add_action( 'widgets_init', 'wpb_load_widget' );
 
