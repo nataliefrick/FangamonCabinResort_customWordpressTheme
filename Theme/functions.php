@@ -703,7 +703,8 @@ class host_section_widget extends WP_Widget {
         $script = $instance['script'];
         $content = $instance['content'];
         $hosts = $instance['hosts'];
-        $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+        $image1 = ! empty( $instance['image1'] ) ? $instance['image1'] : '';
+        $image2 = ! empty( $instance['image2'] ) ? $instance['image2'] : '';
 
         $p = '<div><p><span class="big">' . $big . '</span>' . $content . '<br><br><span class="script">' . $script . '</span><br>We are your hosts, ' . $hosts . '.</p>';
 
@@ -712,11 +713,16 @@ class host_section_widget extends WP_Widget {
         if ( ! empty( $title ) )
             echo '<h2 class="full-width">' . $title . '</h2>';
         echo $p;
-        if($image): ?>
-            <img src="<?php echo esc_url($image); ?>" alt="">
+        if($image1): ?>
+            <img class="pic2" src="<?php echo esc_url($image1); ?>" alt="">
+        <?php endif;
+        echo '</div>';
+        if($image1): ?>
+            <img class="pic1" src="<?php echo esc_url($image2); ?>" alt="a photo of the hosts">
         <?php endif;
             // echo $args['after_sidebar'];
     }
+    
 
     // Widget Backend
     public function form( $instance ) {
@@ -726,7 +732,7 @@ class host_section_widget extends WP_Widget {
         else {
             $title = __( 'New title', 'wpb_widget_domain' );
         }
-        $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+    
         // Widget admin form
         ?>
         <p>
@@ -750,10 +756,15 @@ class host_section_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'hosts' ); ?>" name="<?php echo $this->get_field_name( 'hosts' ); ?>" type="text" value="<?php echo esc_attr( $hosts ); ?>" />
         </p>
         <p>
-      <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_url( $image ); ?>" />
-      <button class="upload_image_button button button-primary">Upload Image</button>
-   </p>
+            <label for="<?php echo $this->get_field_id( 'image1' ); ?>"><?php _e( 'Image 1:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'image1' ); ?>" name="<?php echo $this->get_field_name( 'image1' ); ?>" type="text" value="<?php echo esc_url( $image1 ); ?>" />
+            <button class="upload_image_button button button-primary">Upload Image</button>
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'image2' ); ?>"><?php _e( 'Image: 2' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'image2' ); ?>" name="<?php echo $this->get_field_name( 'image2' ); ?>" type="text" value="<?php echo esc_url( $image2 ); ?>" />
+            <button class="upload_image_button button button-primary">Upload Image</button>
+        </p>
         
 
         <?php
@@ -767,7 +778,8 @@ class host_section_widget extends WP_Widget {
         $instance['big'] = ( ! empty( $new_instance['big'] ) ) ? strip_tags( $new_instance['big'] ) : '';
         $instance['script'] = ( ! empty( $new_instance['script'] ) ) ? strip_tags( $new_instance['script'] ) : '';
         $instance['hosts'] = ( ! empty( $new_instance['hosts'] ) ) ? strip_tags( $new_instance['hosts'] ) : '';
-        $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? $new_instance['image'] : '';
+        $instance['image1'] = ( ! empty( $new_instance['image1'] ) ) ? $new_instance['image1'] : '';
+        $instance['image2'] = ( ! empty( $new_instance['image2'] ) ) ? $new_instance['image2'] : '';
  
         return $instance;
     }

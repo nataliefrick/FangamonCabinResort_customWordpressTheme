@@ -74,15 +74,4 @@
         <?php dynamic_sidebar('host_section'); ?>
     <?php endif ?>
 
-    <!-- <section id="your-hosts"> -->
-        <!-- <h2 class="dont-show">Your hosts: </h2>
-        <div>
-            <p><span class="big">FÅNGAMON LUXURY CABIN RESORT</span> is a luxury resort located in the forests of Jämtland. Our aim is to provide a luxury get-away with maximal exposure to our beautiful nature.<br><br><span class="script">Welcome to our world!</span><br>
-            We are your hosts, Natasha and Erik.</p>
-
-            <img class="pic2" src="<?= get_template_directory_uri();?>/img/owners.jpg" alt="a closeup of the owners">
-        </div>
-        <img class="pic1" src="<?= get_template_directory_uri();?>/img/hosts.jpg" alt="a photo of the hosts"> -->
-    <!-- </section> -->
-
-    <?php get_footer() ?>
+<?php get_footer() ?>
