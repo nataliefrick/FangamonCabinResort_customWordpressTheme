@@ -30,6 +30,7 @@
     
      <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f9711d7422.js" crossorigin="anonymous"></script>
-    
+
+<?php wp_footer(); ?>
 </body>
 </html>
