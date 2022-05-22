@@ -15,16 +15,16 @@ wp_head();
 <!-- Description of page/content -->
 <section id="description">
     <h2 class="dont-show">Activities Page Fångamon Cabin Resort</h2>
-        <div>
-            <?php if(have_posts()) : while(have_posts()) : the_post(); 
-                the_content();
-                if ( has_post_thumbnail() ) { ?>
-                    <picture><?php the_post_thumbnail( 'activities' ); ?></picture> 
-                <?php }  
-                endwhile;
-            endif ?>
-        </div>
-    </section>
+    <div>
+        <?php if(have_posts()) : while(have_posts()) : the_post(); 
+            the_content();
+            if ( has_post_thumbnail() ) { ?>
+                <picture><?php the_post_thumbnail( 'activities' ); ?></picture> 
+            <?php }  
+            endwhile;
+        endif ?>
+    </div>
+</section>
 
 <!-- Title & Description Section -->
 <section class="title-subpage">

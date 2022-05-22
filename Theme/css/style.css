@@ -506,13 +506,23 @@ div#col-1 form {
 }
 
 
-div.field span textarea {
+div.field span textarea, .textarea{
     height: 60px;
+    width: 98%;
+}
+
+section#booking input,
+span.mealoptions-day1 input,
+#mealoptions-day2 input,
+#mealoptions-day3 input,
+.checkbox-input,
+input[checkbox] {
+    width: auto!important;
 }
 
 div.field span textarea,
 textarea#message, input {
-    width: 98%; /*300px*/
+    width: 98%; 
     background-color: #ffffff50;
     border: 0;
     font-size: 1em;
@@ -1509,7 +1519,7 @@ section#booking form div.row-fullwidth {
 }
 
 textarea#booking-message {
-    width: 98%;
+    width: 96%;
 }
 
 section#booking input,
@@ -1524,6 +1534,9 @@ textarea#booking-message {
     line-height: 20pt;
 }
 
+.date {
+    line-height: 17pt!important;
+}
 
 select.grey {
     background-color: #E8E8E8;
@@ -1536,28 +1549,38 @@ textarea#booking-message {
     height: 100px;
 }
 
+section#booking label.width-110,
 section#booking label.width {
-    width: 102px;
+    min-width: 102px;
+    text-align: left;
+}
+
+.wpcf7-list-item,
+.cabin-type, 
+section#booking label.nocolor {
+    text-transform: none!important;
+   
+}
+
+section#booking label.greybkg {
+    background-color: #E8E8E8;
+    text-transform: uppercase;
+    color: #7f7f7f;
 }
 
 section#booking label {
-    width: 124px;
-    background-color: #E8E8E8;
-    color: #7f7f7f;
-    text-transform: uppercase;
+    min-width: 124px;
+    color: #000000;
     border: 0;
     font-size: 1em;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 10px;
     margin-right: auto;
     margin-left: 0;
     line-height: 20pt;
 }
-section#booking label.nocolor {
-    background-color: transparent;
-    text-transform: none;
-    color: #000000;
-}
+
 
 fieldset {
     border: 0;
@@ -1565,9 +1588,15 @@ fieldset {
     padding: 0;
 }
 
+fieldset.check {
+    text-align: left;
+    margin-left: 42px;
+}
+
 fieldset.flex-row {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 fieldset.flex-row label {
@@ -1605,13 +1634,18 @@ div#form-col-2 {
     align-items: flex-start;
 }
 
+div#form-col-1 p,
+div#form-col-2 p {
+    margin: 0;
+}
+
 fieldset.row-2a,
 section#booking form div.row-2a {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 25px;
+    gap: 0;
 }
 
 fieldset.row-2b {
@@ -1629,6 +1663,7 @@ input.availability {
     margin-left: auto!important;
     margin-right: 75px!important;
     margin-top: 20px;
+    padding: 10px 20px!important;
 }
 
 div.flex-row {
@@ -1637,9 +1672,9 @@ div.flex-row {
     gap: 20px;
 }
 
-div.addons {
-    /* margin-bottom: 30px; */
-}
+/* div.addons {
+    margin-bottom: 30px;
+} */
 
 @media (min-width: 1000px) {
     /* single blogpost page */

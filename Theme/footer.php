@@ -28,10 +28,7 @@
     </section>
 </footer>
     
-    <!-- Hamburger Menu & Picture Gallery -->
-    <script src="<?= get_template_directory_uri();?>/js/main.js"></script>
-
-    <!-- Font Awesome -->
+     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f9711d7422.js" crossorigin="anonymous"></script>
     
 </body>
