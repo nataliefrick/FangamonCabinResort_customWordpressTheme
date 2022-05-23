@@ -1,7 +1,7 @@
 <?php
 
 /*
-* Template Name: Single Post with featured
+* Template Name: Category Activity
 * Template Post Type: post, page, product
 
 * @package WordPress
@@ -19,7 +19,7 @@ wp_head();
 <div class="seperator-line"></div>
 
 <!-- Blogpost -->
-<h1>single.php</h1>
+<h1>category-activity.php</h1>
 <section id="blogpost">
     <h2 class="dont-show"><?php the_title(); ?></h2>
     <?php if(have_posts()) {

@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php bloginfo('description'); ?>">
+    <!-- <meta name="description" content="<?php bloginfo('description'); ?>"> Not included as it is in the SEO plugin instead-->
+
     <!-- Style Sheets -->
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

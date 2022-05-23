@@ -1,9 +1,7 @@
 <?php
-
-/*
-* Template Name: Single Post with featured
-* Template Post Type: post, page, product
-
+/**
+* Template Name: Category Post Page
+*
 * @package WordPress
 * @subpackage Fångamon Cabin Resort
 * @since Fångamon 1.0
@@ -19,7 +17,7 @@ wp_head();
 <div class="seperator-line"></div>
 
 <!-- Blogpost -->
-<h1>single.php</h1>
+<h1>category.php</h1>
 <section id="blogpost">
     <h2 class="dont-show"><?php the_title(); ?></h2>
     <?php if(have_posts()) {

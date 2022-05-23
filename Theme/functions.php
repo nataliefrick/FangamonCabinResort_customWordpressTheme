@@ -1,6 +1,8 @@
 <?php
 // Activate toolbar
-show_admin_bar($show);
+// show_admin_bar($show);
+// show_admin_bar(get_theme_mod('show_admin_bar'));
+// apply_filters( 'show_admin_bar', $show_admin_bar )
 
 // activate page template option
 add_theme_support( 'block-templates' );
@@ -20,7 +22,8 @@ function register_my_menus() {
   }
   add_action( 'init', 'register_my_menus' );
 
-// dynamic logo
+
+  // dynamic logo
 add_theme_support( 'custom-logo' );
 
 function header_custom_logo_setup() {
