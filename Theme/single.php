@@ -19,7 +19,7 @@ wp_head();
 <div class="seperator-line"></div>
 
 <!-- Blogpost -->
-<h1>single.php</h1>
+<p style="text-align:center">single.php</p>
 <section id="blogpost">
     <h2 class="dont-show"><?php the_title(); ?></h2>
     <?php if(have_posts()) {

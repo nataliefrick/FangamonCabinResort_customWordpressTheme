@@ -17,7 +17,7 @@ wp_head();
 <main>
 <h1 class="title-subpage"><?php the_title();?></h1>
 <!-- Description of page/content -->
-<h1>INDEX:PHP</h1>
+<p style="text-align:center">index.php</p>
 <section id="description">
     <h2 class="dont-show"><?php the_title();?></h2>
     <div>
