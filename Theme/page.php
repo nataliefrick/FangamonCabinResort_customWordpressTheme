@@ -14,7 +14,6 @@ wp_head();
 <main>
 
 <h1 class="title-subpage"><?php the_title();?></h1>
-<p style="text-align:center">page.php</p>
 <!-- Description of page/content -->
 <section id="description">
     <h2 class="dont-show"><?php the_title();?></h2>
@@ -22,7 +21,7 @@ wp_head();
         <?php if(have_posts()) : while(have_posts()) : the_post(); 
             the_content();
             if ( has_post_thumbnail() ) { ?>
-                <picture><?php the_post_thumbnail( 'activities' ); ?></picture> 
+                <picture><?php the_post_thumbnail( 'medium' ); ?></picture> 
             <?php }  
             endwhile;
         endif ?>

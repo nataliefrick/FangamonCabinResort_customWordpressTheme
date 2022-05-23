@@ -56,7 +56,7 @@ add_theme_support( 'post-thumbnails' );
 
 // custom picture sizes
 add_image_size('small', 280, 170, array('center', 'center'));
-add_image_size('medium-size', 380, 250, array('center', 'center'));
+add_image_size('medium', 380, 250, array('center', 'center'));
 add_image_size('regular', 350, 225, array('center', 'center'));
 add_image_size('pic_gallery', 480, 320, array('center', 'center'));
 add_image_size('blog');

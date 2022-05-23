@@ -19,14 +19,13 @@ wp_head();
 <div class="seperator-line"></div>
 
 <!-- Blogpost -->
-<p style="text-align:center">single.php</p>
 <section id="blogpost">
     <h2 class="dont-show"><?php the_title(); ?></h2>
     <?php if(have_posts()) {
         while(have_posts()){
             the_post(); ?>
             <article class="blogpost">
-                <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'large' ); } ?> 
+                <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?> 
                 </picture>
                 <div class="content">
                     <h3><?php the_title(); ?></h3>
@@ -35,7 +34,6 @@ wp_head();
                 </div>
             </article>
         <?php  }  ?>
-
     <?php  }  ?>
    
   

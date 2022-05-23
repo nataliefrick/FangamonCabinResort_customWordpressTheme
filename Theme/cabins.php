@@ -20,7 +20,7 @@ wp_head();
             <?php if(have_posts()) : while(have_posts()) : the_post(); 
                 the_content();
                 if ( has_post_thumbnail() ) { ?>
-                    <picture><?php the_post_thumbnail( 'medium-size' ); ?></picture> 
+                    <picture><?php the_post_thumbnail( 'medium' ); ?></picture> 
                 <?php }  
                 endwhile;
             endif ?>
