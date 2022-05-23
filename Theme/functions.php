@@ -727,13 +727,13 @@ class host_section_widget extends WP_Widget {
         // echo $args['before_sidebar'];
         if ( ! empty( $title ) )
             echo '<h2 class="full-width">' . $title . '</h2>';
-        echo $p;
+        echo '<div class="flex">' .$p;
         if($image1): ?>
             <img id="image_upload_preview" class="pic2" src="<?php echo esc_url($image1); ?>" alt="">
         <?php endif;
         echo '</div>';
         if($image1): ?>
-            <img class="pic1" src="<?php echo esc_url($image2); ?>" alt="a photo of the hosts">
+            <img class="pic1" src="<?php echo esc_url($image2); ?>" alt="a photo of the hosts"></div>
         <?php endif;
             // echo $args['after_sidebar'];
     }

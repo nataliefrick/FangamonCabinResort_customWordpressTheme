@@ -48,7 +48,7 @@ wp_head();
                     <div class="content">
                         <h3><?php the_title(); ?></h3>
                         <p><?php the_excerpt(); ?></p>
-                        <a href="<?= get_template_directory_uri();?><?php the_ID(); ?>"><button class="read-more">Read More</button></a>
+                        <a href="<?= the_permalink(); ?>"><button class="read-more">Read More</button></a>
                     </div>
                 </article>
         <?php     

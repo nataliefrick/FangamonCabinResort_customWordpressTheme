@@ -24,7 +24,11 @@ wp_head();
         while(have_posts()){
             the_post(); ?>
             <article class="blogpost">
-                <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'large' ); } ?> 
+                <picture> <?php if ( has_post_thumbnail() ) { 
+                    $alt = get_post_meta ( $image_id, '_wp_attachment_image_alt', true );
+                    // the_post_thumbnail( 'large' );  
+                    echo '<img alt="' . esc_html ( $alt ) . '" src="' .the_post_thumbnail( 'large' );  . '" />';?>
+
                 </picture>
                 <div class="content">
                     <h3><?php the_title(); ?></h3>
