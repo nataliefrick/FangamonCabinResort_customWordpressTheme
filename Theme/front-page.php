@@ -25,7 +25,7 @@
 <!-- Title & Description Section -->
     <section id="title">
         <h1 class="dont-show">Luxury accommodations in Åre at Fångamon Cabin Resort</h1>
-        <h2>Come and experience the all the forests and the mountains or Åre have to offer<br>
+        <h2>Come and experience all that the forests and the mountains of Åre have to offer<br>
         with luxury accommodations in style and comfort</h2>
     </section>
 
