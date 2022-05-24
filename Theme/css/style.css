@@ -1254,8 +1254,8 @@ nav#nav-header li {
 @media (max-width: 770px) {
     nav#nav-footer a,
     nav#nav-footer li {
-    padding: 4px;
-    font-size: 16pt;
+        padding: 15px;
+        font-size: 20pt;
     }
 
     nav#nav-header a,

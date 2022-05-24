@@ -52,7 +52,7 @@ add_theme_support('custom-header', $args);
 
 // get and display alt text
 function alt_text_display() {
-    $header_id = header_image(get_the_ID());
+    $header_id = get_header_image(get_the_ID());
     $alt = get_post_meta($header_id, '_wp_attachment_image_alt', true);
     // echo $alt ;
 }
@@ -499,7 +499,7 @@ class card_widget extends WP_Widget {
     // Class card_widget ends here
 }
 
-// Title Widget
+// Map Widget
 class map_section_widget extends WP_Widget {
 
     function __construct() {
@@ -541,12 +541,12 @@ class map_section_widget extends WP_Widget {
 
         $gps = '<span class="gps"> GPS: ' . $gps_coord_LL . $or .  $gps_coord_d . ' </span></p>';
         $content = '<p class="two-columns">' . $text . '<br>' . $gps;
-        $map_link = '<div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="' . $map . '"></iframe></div></div>';
+        $map_link = '<div class="mapouter"><div class="gmap_canvas"><iframe title="' . $title . '" id="gmap_canvas" src="' . $map . '"></iframe></div></div>';
 
         // echo $args['before_sidebar'];
         if ( ! empty( $title ) )
             echo $args['before_title'];
-            echo '<h2>' . $title . '</h2>';
+            echo $title;
             echo $args['after_title'];
         echo $content;
         echo $map_link;
