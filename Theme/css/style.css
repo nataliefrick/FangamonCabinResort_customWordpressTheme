@@ -318,7 +318,7 @@ ul#nav-desktop-footer {
     text-align: center;
 }
 
-li#logo-header picture img {
+li#logo-header img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -409,8 +409,7 @@ div#logo-header-mobile {
     margin-top: 4%;
 }
 
-div#logo-header-mobile picture,
-div#logo-header-mobile picture img {
+div#logo-header-mobile img {
     width: 100px;
     height: 100px;
     object-fit: fill;
@@ -663,7 +662,7 @@ section#copyright p {
     /* column 2 */
     div#logo-footer {
         height: 192px;
-        width: 192x;
+        width: 192px;
 
     }
 
@@ -741,25 +740,25 @@ section#copyright p {
         padding-bottom: 6%;
     }
 
-    #cabins article.card,
-    #restaurant article.card,
-    #blog article.card,
-    #activities article.card,
-    #resort-sections article.card {
+    #cabins div.card,
+    #restaurant div.card,
+    #blog div.card,
+    #activities div.card,
+    #resort-sections div.card {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
     }
 
-    #cabins article.card-pic,
-    #restaurant article.card-pic {
+    #cabins div.card-pic,
+    #restaurant div.card-pic {
         display: none!important;
     }
 
-    /* #blog article.card,
-    #activities article.card,
-    #resort-sections article.card {
+    /* #blog div.card,
+    #activities div.card,
+    #resort-sections div.card {
         width: 475px;
         /* width: 90%; 
     } */
@@ -787,12 +786,12 @@ section#copyright p {
         gap: 2%;
     }
 
-    #blog article.card {
+    #blog div.card {
         width: 280px;
         margin-bottom: 3%;
     }
-    #activities article.card,
-    #resort-sections article.card {
+    #activities div.card,
+    #resort-sections div.card {
         /* width: 475px; */
         width: 90%;
         margin-bottom: 3%;
@@ -800,9 +799,9 @@ section#copyright p {
         margin-right: auto;
     }
 
-    #blog article.card picture img,
-    #activities article.card picture img,
-    #resort-sections article.card picture img {
+    #blog div.card picture img,
+    #activities div.card picture img,
+    #resort-sections div.card picture img {
         width: 475px;
     }
 }
@@ -827,51 +826,51 @@ section#copyright p {
         margin-right: auto;
     }
   
-    #cabins article.card,
-    #restaurant article.card,
-    #blog article.card,
-    #activities article.card,
-    #resort-sections article.card {
+    #cabins div.card,
+    #restaurant div.card,
+    #blog div.card,
+    #activities div.card,
+    #resort-sections div.card {
         width: 280px;
     }
 
-    #cabins article.card-pic picture img,
-    #cabins article.card-desc picture img,
-    #restaurant article.card-pic picture img,
-    #restaurant article.card-desc picture img,
-    #blog article.card picture img,
-    #activities article.card picture img,
-    #resort-sections article.card picture img {
+    #cabins div.card-pic picture img,
+    #cabins div.card-desc picture img,
+    #restaurant div.card-pic picture img,
+    #restaurant div.card-desc picture img,
+    #blog div.card picture img,
+    #activities div.card picture img,
+    #resort-sections div.card picture img {
         width: 280px;
     }
 }
 
-#cabins article.card,
-#restaurant article.card,
-#blog article.card,
-#activities article.card,
-#resort-sections article.card {
+#cabins div.card,
+#restaurant div.card,
+#blog div.card,
+#activities div.card,
+#resort-sections div.card {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
 }
 
-#cabins article.card-desc picture img,
-#restaurant article.card-desc picture img,
-#blog article.card picture img,
-#activities article.card picture img,
-#resort-sections article.card picture img {
+#cabins div.card-desc picture img,
+#restaurant div.card-desc picture img,
+#blog div.card picture img,
+#activities div.card picture img,
+#resort-sections div.card picture img {
     width: 100%;
     height: 170px;
     object-fit: cover;
     object-position: center bottom;
 }
 
-#cabins article.card div.content,
-#restaurant article.card div.content,
-#blog article.card div.content,
-#activities article.card div.content,
-#resort-sections article.card div.content {
+#cabins div.card div.content,
+#restaurant div.card div.content,
+#blog div.card div.content,
+#activities div.card div.content,
+#resort-sections div.card div.content {
     padding: 5%;
     text-align: center;
 }
@@ -1124,12 +1123,10 @@ div.flex {
 
 
 @media (min-width: 771px) and (max-width: 1026px) { 
-        section#your-hosts img.pic2  {
-            margin-left: 310px;
-        }
-}
+    section#your-hosts img.pic2  {
+        margin-left: 310px;
+    }
 
-@media (min-width: px) and (max-width: 1026px) {
     div.flex,
     section#your-hosts {
         width: 85%;
@@ -1199,8 +1196,8 @@ section#your-hosts img.pic2 {
     object-fit: cover;
     border: 2px solid #ffffff;
     z-index: 1;
-    margin-top: -43px;
-    margin-left: 380px;
+    margin-top: -55px;
+    margin-left: 270px;
 } 
 
 
@@ -1306,8 +1303,8 @@ nav#nav-header a:hover {
     display: inline-block;
 }
 
-#logo-header picture,
-li#logo-header picture img {
+/* #logo-header picture, */
+li#logo-header img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -1378,8 +1375,8 @@ div.container {
         margin-bottom: 25px;
     }
 
-    #cabins article.card-pic,
-    #restaurant article.card-pic,
+    #cabins div.card-pic,
+    #restaurant div.card-pic,
     .card-pic {
         display: none!important;
         width: 0;
@@ -1387,8 +1384,8 @@ div.container {
         order: 2;
     }
 
-    #cabins article.card-pic,
-    #restaurant article.card-pic,
+    #cabins div.card-pic,
+    #restaurant div.card-pic,
     .card-pic picture img {
         display: none;
     }
@@ -1733,7 +1730,7 @@ div.flex-row {
 
     article.blogpost {
         display: flex;
-        flex-direction: rows;
+        flex-direction: row;
     }
 
     article.blogpost picture {
@@ -1785,7 +1782,7 @@ article.blogpost div.content h3 {
 
 section#blog-gallery {
     display: flex;
-    flex-direction: rows;
+    flex-direction: row;
     flex-wrap: nowrap;
     gap: 25px;
     justify-content: center;

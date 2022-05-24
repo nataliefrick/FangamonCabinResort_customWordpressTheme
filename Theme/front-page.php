@@ -14,24 +14,24 @@
 
 <!-- Hero Section -->
     <section id="hero">
-        <h2 class="dont-show">Hero Section</h2>
+        <h2 class="dont-show">What the resort looks like</h2>
         <div id="hero_pic">
             <figure>
-                <img id="heroimg" src="<?= header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width;?>"> <!-- 1024x500 -->
+                <img id="heroimg" alt="<?php alt_text_display(); ?>" src="<?= header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width;?>"> <!-- 1024x500 -->
             </figure>
         </div>
     </section>  
 
 <!-- Title & Description Section -->
     <section id="title">
-        <h1 class="dont-show">Homepage Fångamon Cabin Resort</h1>
-        <h2>Come and experience the all the forests and the mountains have to offer<br>
-        but in style and comfort</h2>
+        <h1 class="dont-show">Luxury accommodations in Åre at Fångamon Cabin Resort</h1>
+        <h2>Come and experience the all the forests and the mountains or Åre have to offer<br>
+        with luxury accommodations in style and comfort</h2>
     </section>
 
 <!-- Description of page/content -->
     <section id="description">
-        <h2 class="dont-show">Description of Resort</h2>
+        <h2 class="dont-show">Resort accommodations</h2>
         <div>
             <?php if(have_posts()) : while(have_posts()) : the_post(); 
                 the_content();
@@ -45,7 +45,7 @@
 
 <!-- about the resort -->
     <section id="resort-sections">
-        <h2 class="dont-show">What the resort has to offer</h2>
+        <h2 class="dont-show">Activities and luxury accommodations at the resort in Åre</h2>
         <?php if(is_active_sidebar('front_pg_column1')) : ?>
             <?php dynamic_sidebar('front_pg_column1'); ?>
         <?php endif ?>

@@ -39,7 +39,6 @@ function header_custom_logo_setup() {
 }
 add_action( 'after_setup_theme', 'header_custom_logo_setup' );
 
-
 // dynamic herobilder (1920x646)
 $args = array(
     'width' => 1840,
@@ -51,8 +50,22 @@ $args = array(
 
 add_theme_support('custom-header', $args);
 
+// get and display alt text
+function alt_text_display() {
+    $header_id = header_image(get_the_ID());
+    $alt = get_post_meta($header_id, '_wp_attachment_image_alt', true);
+    // echo $alt ;
+}
+
+add_action( 'wp_enqueue_scripts', 'alt_text_display' );
+
 // featured images in posts
 add_theme_support( 'post-thumbnails' );
+
+// UPDATE
+// If you wish to add the alt attribute directly to get_post_thumbnail(), you can pass it as an array to the function:
+// the_post_thumbnail( 'thumbnail', [ 'alt' => esc_html ( get_the_title() ) ] ); 
+
 
 // custom picture sizes
 add_image_size('small', 280, 170, array('center', 'center'));
@@ -129,8 +142,8 @@ function front_pg_column1() {
     register_sidebar(array(
         'name'          => 'Front page: Cottages Widget',
         'id'            => 'front_pg_column1',
-        'before_sidebar' => '<article class="card">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -138,8 +151,8 @@ function front_pg_column2() {
     register_sidebar(array(
         'name'          => 'Front page: Restaurant Widget',
         'id'            => 'front_pg_column2',
-        'before_sidebar' => '<article class="card">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -147,8 +160,8 @@ function front_pg_column3() {
     register_sidebar(array(
         'name'          => 'Front page: Activities Widget',
         'id'            => 'front_pg_column3',
-        'before_sidebar' => '<article class="card">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -187,8 +200,8 @@ function restaurant_widget_breakfast1_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: breakfast col-1',
         'id'            => 'restaurant_widget_breakfast1_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -196,8 +209,8 @@ function restaurant_widget_breakfast2_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: breakfast col-2',
         'id'            => 'restaurant_widget_breakfast2_section',
-        'before_sidebar' => '<article class="card card-desc">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-desc">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -205,8 +218,8 @@ function restaurant_widget_breakfast3_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: breakfast col-3',
         'id'            => 'restaurant_widget_breakfast3_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -214,8 +227,8 @@ function restaurant_widget_lunch1_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: Lunch col-1',
         'id'            => 'restaurant_widget_lunch1_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -223,8 +236,8 @@ function restaurant_widget_lunch2_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: lunch col-2',
         'id'            => 'restaurant_widget_lunch2_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -232,8 +245,8 @@ function restaurant_widget_lunch3_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: lunch col-3',
         'id'            => 'restaurant_widget_lunch3_section',
-        'before_sidebar' => '<article class="card card-desc">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-desc">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -241,8 +254,8 @@ function restaurant_widget_dinner1_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: dinner col-1',
         'id'            => 'restaurant_widget_dinner1_section',
-        'before_sidebar' => '<article class="card card-desc">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-desc">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -250,8 +263,8 @@ function restaurant_widget_dinner2_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: dinner col-2',
         'id'            => 'restaurant_widget_dinner2_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -259,8 +272,8 @@ function restaurant_widget_dinner3_section() {
     register_sidebar(array(
         'name'          => 'Restaurant Page: dinner col-3',
         'id'            => 'restaurant_widget_dinner3_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -282,8 +295,8 @@ function cabin_widget_row1col1_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-1 col-1',
         'id'            => 'cabin_widget_row1col1_section',
-        'before_sidebar' => '<article class="card card-desc">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-desc">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -291,8 +304,8 @@ function cabin_widget_row1col2_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-1 col-2',
         'id'            => 'cabin_widget_row1col2_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -300,8 +313,8 @@ function cabin_widget_row1col3_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-1 col-3',
         'id'            => 'cabin_widget_row1col3_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -309,8 +322,8 @@ function cabin_widget_row2col1_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-2 col-1',
         'id'            => 'cabin_widget_row2col1_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -318,8 +331,8 @@ function cabin_widget_row2col2_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-2 col-2',
         'id'            => 'cabin_widget_row2col2_section',
-        'before_sidebar' => '<article class="card card-pic">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-pic">',
+        'after_sidebar'  => '</div>'
     ));
 }
 
@@ -327,8 +340,8 @@ function cabin_widget_row2col3_section() {
     register_sidebar(array(
         'name'          => 'Cabin Page: row-2 col-3',
         'id'            => 'cabin_widget_row2col3_section',
-        'before_sidebar' => '<article class="card card-desc">',
-        'after_sidebar'  => '</article>'
+        'before_sidebar' => '<div class="card card-desc">',
+        'after_sidebar'  => '</div>'
     ));
 }
 

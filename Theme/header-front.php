@@ -33,24 +33,21 @@
     <header id="index">
         <nav id="frontpg-nav-header">
             <!-- Desktop navbar -->
-            <ul id="nav-desktop-header" class="hide-onMobile-flex">
+            <div id="nav-desktop-header" class="hide-onMobile-flex">
+            
             <?php wp_nav_menu( array( 'theme_location' => 'header-menu-left' ) ); ?>
                 <?php
                 if ( function_exists( 'the_custom_logo' ) ) { ?>
-                <li id="logo-header">
-                    <picture>
+                <ul><li id="logo-header">
                     <?php the_custom_logo(); } ?>
-                    </picture>
-                </li>
+                </li></ul>
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu-right' ) ); ?>
-            </ul>
+                </div>
             <!-- Mobile Navbar Small Screen -->
             <div class="hide-onDesktop">
             <?php if ( function_exists( 'the_custom_logo' ) ) { ?>
                 <div id="logo-header-mobile">
-                    <picture>
-                        <?php the_custom_logo(); } ?>
-                    </picture>
+                    <?php the_custom_logo(); } ?>
                 </div>
                 <!-- The overlay -->
                 <div id="myNav" class="overlay">
