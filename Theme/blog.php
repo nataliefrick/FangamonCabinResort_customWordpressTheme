@@ -25,7 +25,7 @@ wp_head();
     if(have_posts()) {
         while(have_posts()){
             the_post();?>
-            <article  id="<?php the_ID(); ?>" class="card blog">
+            <div  id="<?php the_ID(); ?>" class="card blog">
                 <picture> 
                     <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'regular' ); } ?> 
                 </picture>
@@ -35,7 +35,7 @@ wp_head();
                     <p><?php the_excerpt(); ?></p>
                     <a href="<?= the_permalink(); ?>"><button class="read-more">Read More</button></a>
                 </div>
-            </article>
+            </div>
 
     <?php     
         }

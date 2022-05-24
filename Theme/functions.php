@@ -72,7 +72,7 @@ add_image_size('small', 280, 170, array('center', 'center'));
 add_image_size('medium', 380, 250, array('center', 'center'));
 add_image_size('regular', 350, 225, array('center', 'center'));
 add_image_size('pic_gallery', 480, 320, array('center', 'center'));
-add_image_size('blog');
+add_image_size('square', 300, 300, array('bottom', 'center'));
 add_image_size('hero', 1840, 900, array('center', 'center'));
 
 
@@ -181,8 +181,8 @@ function map_section() {
         'id'            => 'map_section',
         'before_title'  => '<h2>',
         'after_title'  => '</h2>',
-        'before_sidebar' => '<section id="map"><article class="content">',
-        'after_sidebar'  => '</article></section>'
+        'before_sidebar' => '<section id="map"><div class="content">',
+        'after_sidebar'  => '</div></section>'
     ));
 }
 

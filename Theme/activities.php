@@ -19,7 +19,7 @@ wp_head();
         <?php if(have_posts()) : while(have_posts()) : the_post(); 
             the_content();
             if ( has_post_thumbnail() ) { ?>
-                <picture><?php the_post_thumbnail( 'activities' ); ?></picture> 
+                <picture><?php the_post_thumbnail( 'square' ); ?></picture> 
             <?php }  
             endwhile;
         endif ?>
@@ -41,7 +41,7 @@ wp_head();
         if(have_posts()) {
             while(have_posts()){
                 the_post();?>
-                <article  id="<?php the_ID(); ?>" class="card activity">
+                <div  id="<?php the_ID(); ?>" class="card activity">
                     <picture> 
                         <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'regular' ); } ?> 
                     </picture>
@@ -50,7 +50,7 @@ wp_head();
                         <p><?php the_excerpt(); ?></p>
                         <a href="<?= the_permalink(); ?>"><button class="read-more">Read More</button></a>
                     </div>
-                </article>
+                </div>
         <?php     
         }
       }

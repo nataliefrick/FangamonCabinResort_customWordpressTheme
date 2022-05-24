@@ -24,7 +24,7 @@ wp_head();
     <?php if(have_posts()) {
         while(have_posts()){
             the_post(); ?>
-            <article class="blogpost">
+            <div class="blogpost">
                 <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?> 
                 </picture>
                 <div class="content">
@@ -32,7 +32,7 @@ wp_head();
                     <p class="publish-date"><?php echo get_the_date(); ?></p>
                     <p><?php the_content(); ?></p>
                 </div>
-            </article>
+            </div>
         <?php  }  ?>
     <?php  }  ?>
    
