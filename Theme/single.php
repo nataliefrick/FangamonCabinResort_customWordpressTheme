@@ -25,7 +25,7 @@ wp_head();
         while(have_posts()){
             the_post(); ?>
             <div class="blogpost">
-                <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'hero' ); } ?> 
+                <picture> <?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'blog' ); } ?> 
                 </picture>
                 <div class="content">
                     <h3><?php the_title(); ?></h3>
