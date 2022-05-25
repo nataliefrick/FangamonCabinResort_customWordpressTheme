@@ -21,9 +21,28 @@ include("incl/hero.php"); ?>
     </div>
 </section>
 
+
+
+
+<!-- banner -->
+<section id="banner">
+    <h2 class="dont-show">Currently at the resort</h2>
+    <picture>
+        <img src="img/event.jpg" alt="event">
+    </picture>
+    <div class="content">
+        <h3>Wine Tasting Event</h3>
+        <p>Friday June 24th, 2022 is our annual wine tasting event. Undersåkers Wine Company will be joining us for dinner and sharing some of their favourite wines that they import for you to try. Come and join us for an evening of information, socalizing and good wine.</p>
+        <p class="deets">3 Course Dinner and Wine Package  995kr / person</p>
+        <a class="read-more" href="#">CLICK HERE TO RESERVE YOUR SPOT</a>
+    </div>
+</section>
+
+
 <!-- about the resort -->
 <section id="resort-sections">
     <h2 class="dont-show">What the resort has to offer</h2>
+    <div class="flex"></div>
     <article class="card">
         <picture>
             <img src="img/small-cabin.jpg" alt="small cabins">

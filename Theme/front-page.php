@@ -45,16 +45,22 @@
 
 <!-- about the resort -->
     <section id="resort-sections">
-        <h2 class="dont-show">Activities and luxury accommodations at the resort in Åre</h2>
-        <?php if(is_active_sidebar('front_pg_column1')) : ?>
-            <?php dynamic_sidebar('front_pg_column1'); ?>
+        <!-- banner -->
+        <?php if(is_active_sidebar('banner_area')) : ?>
+            <?php dynamic_sidebar('banner_area'); ?>
         <?php endif ?>
-        <?php if(is_active_sidebar('front_pg_column2')) : ?>
-            <?php dynamic_sidebar('front_pg_column2'); ?>
-        <?php endif ?>
-        <?php if(is_active_sidebar('front_pg_column3')) : ?>
-            <?php dynamic_sidebar('front_pg_column3'); ?>
-        <?php endif ?>
+        <h2>About the resort</h2>
+        <div class="section-flex">
+            <?php if(is_active_sidebar('front_pg_column1')) : ?>
+                <?php dynamic_sidebar('front_pg_column1'); ?>
+            <?php endif ?>
+            <?php if(is_active_sidebar('front_pg_column2')) : ?>
+                <?php dynamic_sidebar('front_pg_column2'); ?>
+            <?php endif ?>
+            <?php if(is_active_sidebar('front_pg_column3')) : ?>
+                <?php dynamic_sidebar('front_pg_column3'); ?>
+            <?php endif ?>
+        </div>
     </section>
 
 <!-- Location section -->

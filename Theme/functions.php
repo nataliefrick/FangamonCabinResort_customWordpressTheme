@@ -107,6 +107,7 @@ add_action('wp_head', 'ti_custom_javascript');
 
 // Frontpage widgets
 // add_action('widgets_init', 'title');
+add_action('widgets_init', 'banner_area');
 add_action('widgets_init', 'front_pg_column1');
 add_action('widgets_init', 'front_pg_column2');
 add_action('widgets_init', 'front_pg_column3');
@@ -138,6 +139,15 @@ add_action('widgets_init', 'footer_column_3_init');
 // add_action('widgets_init', 'hosts');
 
 // Fontpage widget areas ---------------------------------------------------
+function banner_area() {
+    register_sidebar(array(
+        'name'          => 'Front page: Banner',
+        'id'            => 'banner_area',
+        'before_sidebar' => '<section id="banner"><h2 class="dont-show">Currently at the resort</h2>',
+        'after_sidebar'  => '</section>'
+    ));
+}
+
 function front_pg_column1() {
     register_sidebar(array(
         'name'          => 'Front page: Cottages Widget',
@@ -410,6 +420,124 @@ function footer_column_3_init() {
 
 // gallery widget: altered actual gallery widget wordpress file.
 
+// Banner Widget
+class banner_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+
+        // Base ID of your widget
+        'banner_widget',
+
+        // Widget name will appear in UI
+        __('Banner', 'banner_widget_domain'),
+
+        // Widget description
+        array( 'description' => __( 'creates a banner with info', 'banner_widget_domain' ), )
+        );
+    }
+
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        //var_dump( $instance);
+        $title =  ! empty( $instance['title'] ) ?  $instance['title'] : '';
+        $content = ! empty( $instance['content'] ) ?  $instance['content'] : '';
+        $deets = ! empty( $instance['deets'] ) ?  $instance['deets'] : '';
+        $price = ! empty( $instance['price'] ) ?  $instance['price'] : '';
+        $readmorelink = ! empty( $instance['readmorelink'] ) ?  $instance['readmorelink'] : '';
+        $readmoretext = ! empty( $instance['readmoretext'] ) ?  $instance['readmoretext'] : '';
+        $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+        // title picture content deets price readmorelink rmtext
+        // echo $args['before_sidebar'];
+        
+
+        if($image): ?>
+            <picture><img src="<?php echo esc_url($image); ?>" alt="banner image"></div></picture>
+        <?php endif;
+        echo '<div class="content">';
+        echo '<h3>' . $title . '</h3>';
+        echo '<p>' . $content . '</p>';
+        if ( ! empty( $deets ) )
+            echo '<p class="content">' . $deets . ' | ' . $price . '</p>';
+        echo '<a class="read-more" href="' . $readmorelink . '">' . $readmoretext . '</a>';
+        // echo $args['after_sidebar'];
+    }
+
+    // Widget Backend
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) { $title = $instance[ 'title' ]; }
+        else { $title = __( 'Event Title', 'card_widget_domain' ); }
+        if ( isset( $instance[ 'content' ] ) ) { $content = $instance[ 'content' ]; }
+        if ( isset( $instance[ 'deets' ] ) ) { $sleeps = $instance[ 'deets' ]; }
+        if ( isset( $instance[ 'price' ] ) ) { $price = $instance[ 'price' ]; }
+        if ( isset( $instance[ 'readmorelink' ] ) ) { $readmorelink = $instance[ 'readmorelink' ]; }
+        if ( isset( $instance[ 'readmoretext' ] ) ) { $readmoretext = $instance[ 'readmoretext' ]; }
+        if ( isset( $instance[ 'image' ] ) ) { $image = $instance[ 'image' ]; }
+
+    // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e( 'Content:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" type="text" value="<?php echo esc_attr( $content ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'deets' ); ?>"><?php _e( 'Details:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'deets' ); ?>" name="<?php echo $this->get_field_name( 'deets' ); ?>" type="text" value="<?php echo esc_attr( $sleeps ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'price' ); ?>"><?php _e( 'Price:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'price' ); ?>" name="<?php echo $this->get_field_name( 'price' ); ?>" type="text" value="<?php echo esc_attr( $price ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'readmoretext' ); ?>"><?php _e( 'Read More text:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'readmoretext' ); ?>" name="<?php echo $this->get_field_name( 'readmoretext' ); ?>" type="text" value="<?php echo esc_attr( $readmoretext ); ?>" />
+        </p>
+        
+        <p>
+            <label for="<?php echo $this->get_field_id( 'readmorelink' ); ?>"><?php _e( 'Link:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'readmorelink' ); ?>" name="<?php echo $this->get_field_name( 'readmorelink' ); ?>" type="text" value="<?php echo esc_attr( $readmorelink ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image: ' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_url( $image ); ?>" />
+            <button class="upload_image_button button button-primary">Upload Image</button>
+        </p>
+
+         <?php
+    }
+
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+        $instance['deets'] = ( ! empty( $new_instance['deets'] ) ) ? strip_tags( $new_instance['deets'] ) : '';
+        $instance['price'] = ( ! empty( $new_instance['price'] ) ) ? strip_tags( $new_instance['price'] ) : '';
+        $instance['readmoretext'] = ( ! empty( $new_instance['readmoretext'] ) ) ? strip_tags( $new_instance['readmoretext'] ) : '';
+        $instance['readmorelink'] = ( ! empty( $new_instance['readmorelink'] ) ) ? strip_tags( $new_instance['readmorelink'] ) : '';
+        $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? strip_tags( $new_instance['image'] ) : '';
+
+         return $instance;
+    }
+
+        // Calling scripts to upload media
+        public function scripts()
+        {
+            wp_enqueue_script( 'media-upload' );
+            wp_enqueue_media();
+            wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true);
+        }
+    
+
+    // Class banner_widget ends here
+}
+
+
+
 // Card Widget
 class card_widget extends WP_Widget {
 
@@ -469,7 +597,7 @@ class card_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'date' ); ?>"><?php _e( 'Content:' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e( 'Content:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" type="text" value="<?php echo esc_attr( $content ); ?>" />
         </p>
         <p>
@@ -726,11 +854,11 @@ class host_section_widget extends WP_Widget {
     public function widget( $args, $instance ) {
         // var_dump( $args);
                     
-        $title = $instance['title'];
-        $big = $instance['big'];
-        $script = $instance['script'];
-        $content = $instance['content'];
-        $hosts = $instance['hosts'];
+        $title = ! empty( $instance['title'] ) ?  $instance['title'] : '';
+        $big = ! empty( $instance['big'] ) ?  $instance['big'] : '';
+        $script = ! empty( $instance['script'] ) ?  $instance['script'] : '';
+        $content = ! empty( $instance['content'] ) ?  $instance['content'] : '';
+        $hosts = ! empty( $instance['hosts'] ) ?  $instance['hosts'] : '';
         $image1 = ! empty( $instance['image1'] ) ? $instance['image1'] : '';
         $image2 = ! empty( $instance['image2'] ) ? $instance['image2'] : '';
 
@@ -745,7 +873,7 @@ class host_section_widget extends WP_Widget {
             <img id="image_upload_preview" class="pic2" src="<?php echo esc_url($image1); ?>" alt="">
         <?php endif;
         echo '</div>';
-        if($image1): ?>
+        if($image2): ?>
             <img class="pic1" src="<?php echo esc_url($image2); ?>" alt="a photo of the hosts"></div>
         <?php endif;
             // echo $args['after_sidebar'];
@@ -789,7 +917,7 @@ class host_section_widget extends WP_Widget {
             <button class="upload_image_button button button-primary">Upload Image</button>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'image2' ); ?>"><?php _e( 'Image: 2' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'image2' ); ?>"><?php _e( 'Image 2 (small square):' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'image2' ); ?>" name="<?php echo $this->get_field_name( 'image2' ); ?>" type="text" value="<?php echo esc_url( $image2 ); ?>" />
             <button class="upload_image_button button button-primary">Upload Image</button>
         </p>
@@ -799,18 +927,18 @@ class host_section_widget extends WP_Widget {
     }
 
     // Updating widget replacing old instances with new
-    public function update( $new_instance, $old_instance ) {
-        $instance = array();
-        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-        $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
-        $instance['big'] = ( ! empty( $new_instance['big'] ) ) ? strip_tags( $new_instance['big'] ) : '';
-        $instance['script'] = ( ! empty( $new_instance['script'] ) ) ? strip_tags( $new_instance['script'] ) : '';
-        $instance['hosts'] = ( ! empty( $new_instance['hosts'] ) ) ? strip_tags( $new_instance['hosts'] ) : '';
-        $instance['image1'] = ( ! empty( $new_instance['image1'] ) ) ? $new_instance['image1'] : '';
-        $instance['image2'] = ( ! empty( $new_instance['image2'] ) ) ? $new_instance['image2'] : '';
+    // public function update( $new_instance, $old_instance ) {
+    //     $instance = array();
+    //     $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+    //     $instance['content'] = ( ! empty( $new_instance['content'] ) ) ? strip_tags( $new_instance['content'] ) : '';
+    //     $instance['big'] = ( ! empty( $new_instance['big'] ) ) ? strip_tags( $new_instance['big'] ) : '';
+    //     $instance['script'] = ( ! empty( $new_instance['script'] ) ) ? strip_tags( $new_instance['script'] ) : '';
+    //     $instance['hosts'] = ( ! empty( $new_instance['hosts'] ) ) ? strip_tags( $new_instance['hosts'] ) : '';
+    //     $instance['image1'] = ( ! empty( $new_instance['image1'] ) ) ? $new_instance['image1'] : '';
+    //     $instance['image2'] = ( ! empty( $new_instance['image2'] ) ) ? $new_instance['image2'] : '';
  
-        return $instance;
-    }
+    //     return $instance;
+    // }
 
     // Calling scripts to upload media
     public function scripts()
@@ -829,6 +957,7 @@ function wpb_load_widget() {
     register_widget( 'map_section_widget' );
     register_widget( 'companyInfo_widget' );
     register_widget( 'host_section_widget' );
+    register_widget( 'banner_widget' );
 }
 add_action( 'widgets_init', 'wpb_load_widget' );
 
